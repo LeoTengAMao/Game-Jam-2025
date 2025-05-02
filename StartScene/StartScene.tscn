@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyppo2lb7oht2"]
+
+[ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://StartScene/Scripts/start_scene.gd" id="1_6kmw5"]
+[ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://StartScene/images/start_background.jpg" id="1_dh5a1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6kmw5")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
+texture = ExtResource("1_dh5a1")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="PanelContainer"]
+zoom = Vector2(1.15, 1.15)
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PanelContainer"]
+follow_viewport_enabled = true
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/CanvasLayer"]
+offset_left = -358.0
+offset_top = -32.0
+offset_right = 357.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 43
+placeholder_text = "username"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_submitted" from="PanelContainer/CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
