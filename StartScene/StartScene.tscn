@@ -6,22 +6,18 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6kmw5")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dh5a1")
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="PanelContainer"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.15, 1.15)
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PanelContainer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/CanvasLayer"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
 offset_left = -358.0
 offset_top = -32.0
 offset_right = 357.0
@@ -31,4 +27,4 @@ placeholder_text = "username"
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="text_submitted" from="PanelContainer/CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
