@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq2d1vi1y5e02"]
+
+[ext_resource type="Texture2D" uid="uid://b1e5vg005ylm1" path="res://sprite/Custom/Border All 9.png" id="1_fa0op"]
+
+[node name="InvSlotUI" type="Panel"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(59.5617, 59.5042)
+scale = Vector2(1.91736, 1.91922)
+texture = ExtResource("1_fa0op")
+region_enabled = true
+region_rect = Rect2(383.979, 256.848, 62.6053, 62.9474)
