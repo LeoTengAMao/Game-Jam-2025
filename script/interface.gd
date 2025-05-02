@@ -2,7 +2,10 @@ extends Control
 
 @export var inv: Inv
 
+var player
+
 func _ready() -> void:
+	player = get_node("PlayerHanlder")
 	$PanelContainer/VBoxContainer/PlayerName.text = Global.player_name
  
 func _on_skill_1_pressed() -> void:
@@ -30,7 +33,7 @@ func _on_back_pack_pressed() -> void:
 
 
 func _on_normal_attack_pressed() -> void:
-	print("normal_atk")
+	player.Click_Attack(0)
 
 
 func _on_normal_defend_pressed() -> void:

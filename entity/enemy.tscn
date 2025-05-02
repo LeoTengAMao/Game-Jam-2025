@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccxxvuk60nuck"]
+
+[ext_resource type="Script" uid="uid://cvp0iot23kl61" path="res://script/Slime.cs" id="1_p1h7c"]
+[ext_resource type="Texture2D" uid="uid://d0d5a5gh8j5ry" path="res://entity/chino (1).png" id="2_p1h7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlvtu"]
+radius = 9.05539
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_p1h7c")
+_hp = 2
+_atk = 1
+_spd = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.0597382, 0.0675253)
+texture = ExtResource("2_p1h7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xlvtu")
