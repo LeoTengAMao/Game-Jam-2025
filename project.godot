@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="新遊戲專案"
-run/main_scene="uid://bwq4gxvyy8hvw"
+run/main_scene="uid://dyppo2lb7oht2"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [dotnet]
 

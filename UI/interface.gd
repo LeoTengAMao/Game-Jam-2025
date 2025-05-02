@@ -1,6 +1,9 @@
 extends Control
 
-
+func _ready() -> void:
+	$PanelContainer/VBoxContainer/PlayerName.text = Global.player_name
+ 
+	
 func _on_skill_2_pressed() -> void:
 	print("skill2")
 
