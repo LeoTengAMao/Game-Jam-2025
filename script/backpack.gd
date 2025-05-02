@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	Global.BackPackIsOpen = false
+	visible = false  
 
 func open():
 	self.visible = true
@@ -15,9 +16,9 @@ func close():
 	
 func _process(delta) -> void:
 	if Global.BackPackIsOpen:
-		close()
-	else:
 		open()
+	else:
+		close()
 
 func _on_back_pack_pressed() -> void:
 	if Global.BackPackIsOpen:
