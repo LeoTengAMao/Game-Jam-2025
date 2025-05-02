@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddr2smarvt7c6"]
+
+[ext_resource type="Texture2D" uid="uid://b3nv8qbv2o64n" path="res://asset/start_background.jpg" id="1_6y5kl"]
+[ext_resource type="Script" uid="uid://bawc12qojxdhw" path="res://RestArea/scripts/rest_area.gd" id="1_q2jxg"]
+[ext_resource type="PackedScene" uid="uid://027dttu1vl3i" path="res://RestArea/scenes/store.tscn" id="1_y27ks"]
+[ext_resource type="PackedScene" uid="uid://cigmugs4fxxyr" path="res://RestArea/scenes/player.tscn" id="2_6y5kl"]
+
+[node name="RestArea" type="Node2D"]
+script = ExtResource("1_q2jxg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("1_6y5kl")
+
+[node name="store" parent="." instance=ExtResource("1_y27ks")]
+
+[node name="player" parent="." instance=ExtResource("2_6y5kl")]
+position = Vector2(-252, 17)
+scale = Vector2(0.263738, 0.263738)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.250744, 1.55214)
+zoom = Vector2(1.165, 1.165)
