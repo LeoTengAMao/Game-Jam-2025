@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwq4gxvyy8hvw"]
+[gd_scene load_steps=4 format=3 uid="uid://bwq4gxvyy8hvw"]
 
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/Player.tscn" id="2_cpr0p"]
+[ext_resource type="Script" uid="uid://lqp4m587qkh8" path="res://entity/player.gd" id="3_cpr0p"]
 
 [node name="Game" type="Node2D"]
 
@@ -17,6 +18,7 @@ grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 4
 
-[node name="player" parent="." instance=ExtResource("2_cpr0p")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("2_cpr0p")]
+script = ExtResource("3_cpr0p")

@@ -8,3 +8,10 @@ func update(item: InvItem):
 	else :
 		item_visual.visible = true 
 		item_visual.texture = item.texture
+
+
+func _on_button_pressed() -> void:
+	if item_visual.visible == false :
+		print("No")
+	else :
+		print("Yes")

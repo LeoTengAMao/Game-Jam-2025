@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_ywscf")
-name = "stick"
+name = "Stick"
 texture = ExtResource("2_ywscf")
 metadata/_custom_type_script = "uid://ugkj7ur0t8xb"
