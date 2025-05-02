@@ -1,4 +1,2 @@
 # Game-Jam
-Game jam
-
-hahaha
+遊戲類型 : 塔房
