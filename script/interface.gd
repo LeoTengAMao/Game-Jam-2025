@@ -1,5 +1,7 @@
 extends Control
 
+@export var inv: Inv
+
 func _ready() -> void:
 	$PanelContainer/VBoxContainer/PlayerName.text = Global.player_name
  

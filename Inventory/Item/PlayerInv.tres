@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://je6u1uxlm3p0"]
+
+[ext_resource type="Script" uid="uid://ugkj7ur0t8xb" path="res://Inventory/InvItem.gd" id="1_bmusa"]
+[ext_resource type="Resource" uid="uid://cbni21q2uf75v" path="res://Inventory/Item/Stick.tres" id="2_yx7me"]
+[ext_resource type="Script" uid="uid://cto515b7dw7f3" path="res://Inventory/Inventory.gd" id="3_lvbed"]
+
+[resource]
+script = ExtResource("3_lvbed")
+items = Array[ExtResource("1_bmusa")]([null, null, ExtResource("2_yx7me"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://cto515b7dw7f3"

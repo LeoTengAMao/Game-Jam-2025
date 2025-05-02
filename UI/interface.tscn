@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://rqorsd0vmmqn"]
+[gd_scene load_steps=13 format=3 uid="uid://rqorsd0vmmqn"]
 
 [ext_resource type="Script" uid="uid://dpkit03p1mlta" path="res://script/interface.gd" id="1_s3rii"]
+[ext_resource type="Resource" uid="uid://je6u1uxlm3p0" path="res://Inventory/Item/PlayerInv.tres" id="2_u8s32"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_yp72a"]
 [ext_resource type="PackedScene" uid="uid://b72brxojn6dwo" path="res://UI/backpack.tscn" id="3_0bks8"]
 [ext_resource type="Script" uid="uid://c0e7sogstn21w" path="res://script/backpack.gd" id="4_u8s32"]
@@ -35,6 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_s3rii")
+inv = ExtResource("2_u8s32")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
