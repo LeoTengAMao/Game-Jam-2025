@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://44gnxyujbpub"
-path="res://.godot/imported/0.png-31b99b211d6302e769bb4f03bd149973.ctex"
+uid="uid://wsklgbptic4s"
+path="res://.godot/imported/Thin.png-c05667a7b2b64ee1df6057365c0a60b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/0.png"
-dest_files=["res://.godot/imported/0.png-31b99b211d6302e769bb4f03bd149973.ctex"]
+source_file="res://sprite/StickmanPack/Idle/Thin.png"
+dest_files=["res://.godot/imported/Thin.png-c05667a7b2b64ee1df6057365c0a60b1.ctex"]
 
 [params]
 
