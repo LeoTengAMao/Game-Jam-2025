@@ -14,6 +14,16 @@ func _ready() -> void:
 			combatHanlder.EnemyTurnStart.connect(ForbiddenButton)
 		if combatHanlder.has_signal("PlayerTurnStart"):
 			combatHanlder.PlayerTurnStart.connect(OpenButton)
+		if combatHanlder.has_signal("Won"):
+			combatHanlder.Won.connect(SwitchRestScene)
+		if combatHanlder.has_signal("Lost"):
+			combatHanlder.Lost.connect(ResetGame)
+
+func SwitchRestScene() -> void:
+	print("you win")
+	
+func ResetGame() -> void:
+	print("you lost")
 
 func ForbiddenButton() -> void:
 	visible = false
@@ -21,30 +31,23 @@ func ForbiddenButton() -> void:
 func OpenButton() -> void:
 	visible = true
 
- 
 func _on_skill_1_pressed() -> void:
-	print("skill1")
-
+	combatHanlder.Click_Skill(0, 0)
 
 func _on_skill_2_pressed() -> void:
-	print("skill2")
-
+	combatHanlder.Click_Skill(1, 0)
 
 func _on_skill_3_pressed() -> void:
-	print("skill3")
-
+	combatHanlder.Click_Skill(2, 0)
 
 func _on_skill_4_pressed() -> void:
-	print("skill4")
-
+	combatHanlder.Click_Skill(3, 0)
 
 func _on_skill_5_pressed() -> void:
-	print("skill5")
-
+	combatHanlder.Click_Skill(4, 0)
 
 func _on_back_pack_pressed() -> void:
 	print("Backpack")
-
 
 func _on_normal_attack_pressed() -> void:
 	if combatHanlder != null:
