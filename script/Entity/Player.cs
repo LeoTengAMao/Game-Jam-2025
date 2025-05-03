@@ -17,12 +17,12 @@ public partial class Player: Entity
 	
 	private int _maxActionPoint;
 	private int _actionPoint;
-	private Skill _attackSkill;
-	public Skill[] Skills{ get; private set; } = new Skill[5];
+	private AbstractSkill _attackAbstractSkill;
+	public AbstractSkill[] Skills{ get; private set; } = new AbstractSkill[5];
 	
-	public void ReplaceSkill(Skill skill, int idx)
+	public void ReplaceSkill(AbstractSkill abstractSkill, int idx)
 	{
-		Skills[idx] = skill;
+		Skills[idx] = abstractSkill;
 	}
 
 	public override void TakeDamage(int damage)
@@ -35,7 +35,7 @@ public partial class Player: Entity
 	{
 		_maxActionPoint = _actionPoint;
 		_actionPoint = actionPoint;
-		_attackSkill = new BasicAttackSkill(0, this);
+		_attackAbstractSkill = new BasicAttackSkill(0, this);
 		Skills = Skills;
 	}
 
@@ -55,7 +55,7 @@ public partial class Player: Entity
 	}
 	public void UseAttackSkill(Entity target)
 	{
-		_attackSkill.Execute(target);
+		_attackAbstractSkill.Execute(target);
 	}
 
 	public void UseSkill(int idx, Entity target)

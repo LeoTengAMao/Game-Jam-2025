@@ -4,6 +4,14 @@ namespace 新遊戲專案.script;
 
 public partial class BasicSkill : Node
 {
-    public Skill skill { get; private set; }
+    [Export] protected string SkillName;
+    [Export] protected int ActionPoint;
+    [Export] protected int Atk;
     
+    public AbstractSkill AbstractSkill { get; private set; }
+    
+    public override void _Ready()
+    {
+        AbstractSkill = new Skill(ActionPoint);
+    }
 }

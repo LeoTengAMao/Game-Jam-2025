@@ -1,16 +1,10 @@
 namespace 新遊戲專案.script;
 
-public class BasicAttackSkill : Skill
+public class BasicAttackSkill(int actionPoint, Player player) : AbstractSkill(actionPoint)
 {
-    private Player _player;
-    public override void execute(Entity target)
+    public override void Execute(Entity target)
     {
-        int atk = _player.Atk;
+        int atk = player.CurrentAtk;
         target.TakeDamage(atk);
-    }
-
-    public BasicAttackSkill(int actionPoint, Player player) : base(actionPoint)
-    {
-        _player = player;
     }
 }
