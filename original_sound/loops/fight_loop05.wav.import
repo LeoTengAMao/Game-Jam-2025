@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c3tqojuusdkpb"
-path="res://.godot/imported/fight_loop05.wav-1fa2702108e233ff6befb84bd75979a8.sample"
+path="res://.godot/imported/fight_loop05.wav-02ec365efe07b9d5bb5c080646a22737.sample"
 
 [deps]
 
-source_file="res://music/loops/fight_loop05.wav"
-dest_files=["res://.godot/imported/fight_loop05.wav-1fa2702108e233ff6befb84bd75979a8.sample"]
+source_file="res://original_sound/loops/fight_loop05.wav"
+dest_files=["res://.godot/imported/fight_loop05.wav-02ec365efe07b9d5bb5c080646a22737.sample"]
 
 [params]
 

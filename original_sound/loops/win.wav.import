@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d26t7wqwbl21q"
-path="res://.godot/imported/boss_cg.wav-26fbac6530e1780a47593ed84556c5c3.sample"
+uid="uid://6mtjpxc4kocq"
+path="res://.godot/imported/win.wav-a6b6a5d8277fad5efe5b22077dc03d65.sample"
 
 [deps]
 
-source_file="res://music/loops/boss_cg.wav"
-dest_files=["res://.godot/imported/boss_cg.wav-26fbac6530e1780a47593ed84556c5c3.sample"]
+source_file="res://original_sound/loops/win.wav"
+dest_files=["res://.godot/imported/win.wav-a6b6a5d8277fad5efe5b22077dc03d65.sample"]
 
 [params]
 

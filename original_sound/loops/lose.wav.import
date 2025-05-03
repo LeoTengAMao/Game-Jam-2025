@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d28hiar1du6m4"
-path="res://.godot/imported/lose.wav-c3ca1dc79fe552aa741e1034d23f3caa.sample"
+path="res://.godot/imported/lose.wav-ef71b5f10eb4aa5481a35ff4ad68e0ad.sample"
 
 [deps]
 
-source_file="res://music/loops/lose.wav"
-dest_files=["res://.godot/imported/lose.wav-c3ca1dc79fe552aa741e1034d23f3caa.sample"]
+source_file="res://original_sound/loops/lose.wav"
+dest_files=["res://.godot/imported/lose.wav-ef71b5f10eb4aa5481a35ff4ad68e0ad.sample"]
 
 [params]
 
