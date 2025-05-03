@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="Script" uid="uid://csqk6a46awi62" path="res://script/game.gd" id="1_s0nni"]
-[ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/Player.tscn" id="2_cpr0p"]
-[ext_resource type="Script" uid="uid://lqp4m587qkh8" path="res://entity/player.gd" id="3_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
+[ext_resource type="Script" path="res://entity/player.gd" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://ce6iv18ho1r2f" path="res://Enemy.tscn" id="4_78awf"]
 
 [node name="Game" type="Node2D"]
@@ -17,12 +17,13 @@ z_index = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -575.0
-offset_top = -325.0
-offset_right = 575.0
-offset_bottom = 325.0
+offset_left = -511.0
+offset_top = -323.0
+offset_right = 639.0
+offset_bottom = 327.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.888963, 0.983511)
 size_flags_horizontal = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]

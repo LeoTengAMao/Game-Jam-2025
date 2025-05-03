@@ -23,10 +23,15 @@ Global="*res://Global.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=768
+window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="新遊戲專案"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
