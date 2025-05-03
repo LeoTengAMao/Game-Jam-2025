@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvcu1cwg1bh76"]
+
+[ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_3s7dg"]
+[ext_resource type="Texture2D" uid="uid://b23ehjupyjwa4" path="res://sprite/Wanderer Magican/Idle.png" id="2_3s7dg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og68x"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf0sy"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swb5q"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c5x5"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0s3n"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8n3j"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwtxl"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq4ww"]
+atlas = ExtResource("2_3s7dg")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il1ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og68x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf0sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swb5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c5x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0s3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8n3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwtxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq4ww")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a23gj"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_3s7dg")
+Hp = 7
+Atk = 2
+Def = 1
+Spd = 5
+Points = 10
+Lines = 1
+Planes = 2
+AppearChance = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-2.17576, 2.24242)
+sprite_frames = SubResource("SpriteFrames_il1ph")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 7
+frame_progress = 0.0139378
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a23gj")

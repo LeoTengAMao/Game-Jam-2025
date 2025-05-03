@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfh1xc63nfnog"]
+
+[ext_resource type="Texture2D" uid="uid://bvyektv8g75q1" path="res://sprite/狐妖CG.png" id="1_1kes0"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_apjtc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrlk8"]
+texture = ExtResource("1_1kes0")
+
+[node name="CG" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1022.0
+offset_bottom = 768.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lrlk8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 592.0
+offset_right = 519.0
+offset_bottom = 750.0
+theme_override_fonts/font = ExtResource("2_apjtc")
+theme_override_font_sizes/font_size = 120
+text = "九尾妖狐"

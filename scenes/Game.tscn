@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwq4gxvyy8hvw"]
+[gd_scene load_steps=8 format=3 uid="uid://bwq4gxvyy8hvw"]
 
 [ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
 [ext_resource type="Script" uid="uid://lqp4m587qkh8" path="res://entity/player.gd" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cjws71pcrqeuu" path="res://UI/health_bar.tscn" id="5_s0nni"]
+[ext_resource type="Texture2D" uid="uid://b0xjyyljh13qp" path="res://sprite/7.png" id="6_aug50"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kiw3p"]
+texture = ExtResource("6_aug50")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_78awf")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_s0nni")]
+z_index = 1
 offset_left = -512.0
 offset_top = -389.0
 offset_right = -512.0
@@ -20,11 +25,27 @@ mouse_filter = 1
 z_index = 2
 
 [node name="player" parent="." instance=ExtResource("2_cpr0p")]
+z_index = 1
 script = ExtResource("3_cpr0p")
 
 [node name="Interface" parent="." instance=ExtResource("1_qbsmt")]
+z_index = 2
 custom_minimum_size = Vector2(1000, 768)
 offset_left = -509.0
 offset_top = -379.0
 offset_right = 519.0
 offset_bottom = 389.0
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="background"]
+layout_mode = 0
+offset_left = -514.0
+offset_top = -388.0
+offset_right = 510.0
+offset_bottom = 380.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_kiw3p")
