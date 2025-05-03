@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpyi044becoct"]
+
+[ext_resource type="PackedScene" uid="uid://c67tq70ykjly1" path="res://pkGame/scenes/player.tscn" id="3_tujde"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gaax2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4ysls"]
+distance = 53.9911
+
+[node name="Game" type="Node2D"]
+
+[node name="BackGround" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BackGround"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -64.0
+offset_right = 43.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(28.7978, 6.3717)
+size_flags_horizontal = 4
+
+[node name="ColorRect4" type="ColorRect" parent="BackGround"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 246.0
+offset_right = 43.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(28.7999, 1)
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Boundary" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D"]
+position = Vector2(327, 247)
+shape = SubResource("WorldBoundaryShape2D_gaax2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundary"]
+position = Vector2(216, 119)
+rotation = 1.57542
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D2"]
+position = Vector2(16.4773, -113.077)
+shape = SubResource("WorldBoundaryShape2D_gaax2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary/StaticBody2D3"]
+position = Vector2(895, 136)
+rotation = -1.56338
+shape = SubResource("WorldBoundaryShape2D_4ysls")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(585, 128)
+scale = Vector2(0.97476, 0.0728862)
+zoom = Vector2(2, 2)
+
+[node name="player" parent="." instance=ExtResource("3_tujde")]
+position = Vector2(607, 146)
+scale = Vector2(0.166137, 0.166137)
