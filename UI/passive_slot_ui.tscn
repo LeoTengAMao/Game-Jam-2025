@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://8prnotk8l68c"]
+[gd_scene load_steps=3 format=3 uid="uid://8prnotk8l68c"]
 
 [ext_resource type="Texture2D" uid="uid://b1nqrq0ba5yqx" path="res://sprite/Custom/Border All 2.png" id="1_dn05r"]
+[ext_resource type="Script" uid="uid://cvntmo1dupus3" path="res://UI/passive_slot_ui.gd" id="1_jbnlk"]
 
 [node name="PassiveSlotUI" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(120, 120)
 offset_right = 60.0
 offset_bottom = 63.0
+script = ExtResource("1_jbnlk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(60, 60.25)
@@ -14,3 +16,21 @@ scale = Vector2(2, 1.95902)
 texture = ExtResource("1_dn05r")
 region_enabled = true
 region_rect = Rect2(321.784, 257.45, 60.5869, 61.7158)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 120.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 119.0
+offset_bottom = 121.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

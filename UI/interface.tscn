@@ -1,9 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://rqorsd0vmmqn"]
+[gd_scene load_steps=38 format=3 uid="uid://rqorsd0vmmqn"]
 
 [ext_resource type="Script" uid="uid://dpkit03p1mlta" path="res://script/interface.gd" id="1_s3rii"]
+[ext_resource type="Resource" uid="uid://je6u1uxlm3p0" path="res://Inventory/Item/PlayerInv.tres" id="2_u8s32"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_yp72a"]
 [ext_resource type="PackedScene" uid="uid://b72brxojn6dwo" path="res://UI/backpack.tscn" id="3_0bks8"]
+[ext_resource type="Texture2D" uid="uid://cyndwadv6fyet" path="res://sprite/pixelCardAssest.png" id="4_4h7e0"]
+[ext_resource type="Texture2D" uid="uid://ceck1djtt6i7r" path="res://sprite/simpleUIpackToldi/button/button2.png" id="4_mbs16"]
 [ext_resource type="Script" uid="uid://c0e7sogstn21w" path="res://script/backpack.gd" id="4_u8s32"]
+[ext_resource type="Texture2D" uid="uid://chewljtsyxnd8" path="res://sprite/simpleUIpackToldi/button/button3.png" id="5_4h7e0"]
+[ext_resource type="Texture2D" uid="uid://bg4xdvvgnc4ds" path="res://sprite/simpleUIpackToldi/button/button1.png" id="6_jwg50"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su62x"]
 
@@ -17,10 +22,82 @@ bg_color = Color(0, 0.87451, 0.109804, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su62x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp72a"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwg50"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kj7xo"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(15.7577, 6.12125, 97.0303, 124.849)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4h7e0"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(15.1516, 5.25745, 98.7879, 127.879)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfrx8"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(15.1516, 3.43927, 98.7879, 127.879)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8wvg"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(14.5456, 5.25745, 98.1819, 127.273)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sr5fs"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(14.5456, 4.65138, 99.394, 127.273)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f171v"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(12.7274, 2.83321, 101.212, 129.091)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fukly"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(14.5456, 5.25745, 100, 127.273)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x7iyv"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(13.9395, 4.04533, 102.424, 129.697)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8glj"]
+texture = ExtResource("4_4h7e0")
+region_rect = Rect2(12.7274, 5.25745, 103.03, 128.485)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3rii"]
 bg_color = Color(0.746569, 0.55107, 0.437141, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2hxe"]
+texture = ExtResource("4_mbs16")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smsvh"]
+texture = ExtResource("5_4h7e0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nildt"]
+texture = ExtResource("6_jwg50")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1w5oa"]
+texture = ExtResource("4_mbs16")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jewjf"]
+texture = ExtResource("5_4h7e0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0a8t"]
+texture = ExtResource("6_jwg50")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7j81n"]
+texture = ExtResource("4_mbs16")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn4k2"]
+texture = ExtResource("5_4h7e0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdril"]
+texture = ExtResource("6_jwg50")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7c8m8"]
+texture = ExtResource("4_mbs16")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lburn"]
+texture = ExtResource("5_4h7e0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqerp"]
+texture = ExtResource("6_jwg50")
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -35,6 +112,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_s3rii")
+inv = ExtResource("2_u8s32")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -79,59 +157,65 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_su62x")
 
 [node name="Skill1" type="Button" parent="PanelContainer/SkillButtonPanel"]
 layout_mode = 2
-offset_left = 50.0
-offset_top = 10.0
-offset_right = 150.0
-offset_bottom = 190.0
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yp72a")
+anchor_left = 0.0625
+anchor_top = 0.05
+anchor_right = 0.1875
+anchor_bottom = 0.95
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jwg50")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kj7xo")
 text = "skill1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Skill2" type="Button" parent="PanelContainer/SkillButtonPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.127
-offset_left = 200.0
-offset_top = 10.0
-offset_right = 273.6
-offset_bottom = 164.6
+anchor_left = 0.25
+anchor_top = 0.05
+anchor_right = 0.375
+anchor_bottom = 0.95
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4h7e0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vfrx8")
 text = "skill2"
+metadata/_edit_use_anchors_ = true
 
 [node name="Skill3" type="Button" parent="PanelContainer/SkillButtonPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.127
-offset_left = 350.0
-offset_top = 10.0
-offset_right = 423.6
-offset_bottom = 164.6
+anchor_left = 0.4375
+anchor_top = 0.05
+anchor_right = 0.5625
+anchor_bottom = 0.95
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q8wvg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sr5fs")
 text = "skill3
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Skill4" type="Button" parent="PanelContainer/SkillButtonPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.127
-offset_left = 500.0
-offset_top = 10.0
-offset_right = 573.6
-offset_bottom = 164.6
+anchor_left = 0.625
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.95
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f171v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fukly")
 text = "skill4
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Skill5" type="Button" parent="PanelContainer/SkillButtonPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.033
-anchor_bottom = 0.127
-offset_left = 650.0
-offset_top = 10.0
-offset_right = 723.6
-offset_bottom = 164.6
+anchor_left = 0.8125
+anchor_top = 0.05
+anchor_right = 0.9375
+anchor_bottom = 0.95
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x7iyv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u8glj")
 text = "skill5
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="OtherButtonPanel" type="Panel" parent="PanelContainer"]
 custom_minimum_size = Vector2(350, 200)
@@ -144,37 +228,50 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_s3rii")
 layout_mode = 0
 offset_left = 180.0
 offset_top = 115.0
-offset_right = 310.0
-offset_bottom = 175.0
+offset_right = 330.0
+offset_bottom = 183.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_r2hxe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_smsvh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nildt")
 text = "Backpack
 "
 
 [node name="NormalAttack" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 20.0
 offset_top = 25.0
-offset_right = 155.0
-offset_bottom = 85.0
+offset_right = 170.0
+offset_bottom = 93.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_1w5oa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jewjf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l0a8t")
 text = "Normal Attack"
 
 [node name="NormalDefend" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 20.0
 offset_top = 115.0
-offset_right = 155.0
-offset_bottom = 175.0
+offset_right = 170.0
+offset_bottom = 183.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_7j81n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hn4k2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kdril")
 text = "Normal Defend"
 
 [node name="TakeBreak" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 25.0
-offset_right = 310.0
-offset_bottom = 85.0
+offset_right = 330.0
+offset_bottom = 93.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_7c8m8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lburn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sqerp")
 text = "TakeBreak
 "
 
 [node name="Backpack" parent="." instance=ExtResource("3_0bks8")]
+visible = false
 layout_mode = 1
 anchor_left = -2.31714
 anchor_top = -2.33

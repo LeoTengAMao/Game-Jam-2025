@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var move_speed : float = 100
+@export var move_speed : float = 1000
 
 func _process(delta: float) -> void:
 	if get_tree().current_scene.in_store and Input.is_action_just_pressed("interaction"):

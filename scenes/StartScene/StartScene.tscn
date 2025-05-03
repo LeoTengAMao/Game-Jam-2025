@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyppo2lb7oht2"]
+[gd_scene load_steps=4 format=3 uid="uid://dyppo2lb7oht2"]
 
 [ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://scenes/StartScene/Scripts/start_scene.gd" id="1_6kmw5"]
 [ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://scenes/StartScene/images/start_background.jpg" id="1_dh5a1"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="3_mbrg8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6kmw5")
@@ -18,13 +19,24 @@ metadata/_edit_lock_ = true
 follow_viewport_enabled = true
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
-offset_left = -358.0
-offset_top = -32.0
-offset_right = 357.0
-offset_bottom = 39.0
+offset_left = -350.0
+offset_top = 70.0
+offset_right = 365.0
+offset_bottom = 141.0
 theme_override_font_sizes/font_size = 43
 placeholder_text = "username"
 alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = -212.0
+offset_top = -121.0
+offset_right = 208.0
+offset_bottom = -41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mbrg8")
+theme_override_font_sizes/font_size = 60
+text = "請輸入你的名字"
 
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]

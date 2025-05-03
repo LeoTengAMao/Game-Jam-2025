@@ -1,0 +1,223 @@
+[gd_scene load_steps=16 format=3 uid="uid://c4pb451phntfe"]
+
+[ext_resource type="Script" uid="uid://dpkit03p1mlta" path="res://script/interface.gd" id="1_s3rii"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_yp72a"]
+[ext_resource type="PackedScene" uid="uid://b72brxojn6dwo" path="res://UI/backpack.tscn" id="3_0bks8"]
+[ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="3_mbs16"]
+[ext_resource type="Script" uid="uid://c0e7sogstn21w" path="res://script/backpack.gd" id="4_u8s32"]
+[ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="6_mbs16"]
+[ext_resource type="Script" uid="uid://6ygrawtnlyht" path="res://script/EnemyGenerateHandler.cs" id="7_jwg50"]
+[ext_resource type="PackedScene" uid="uid://ccxxvuk60nuck" path="res://entity/enemy.tscn" id="8_1w5oa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su62x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jbjk"]
+bg_color = Color(0.996078, 0.0823529, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bks8"]
+bg_color = Color(0, 0.87451, 0.109804, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s3rii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su62x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp72a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3rii"]
+bg_color = Color(0.746569, 0.55107, 0.437141, 1)
+
+[node name="Interface_combatTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 13.0
+offset_right = 7.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_s3rii")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999132
+anchor_bottom = 0.989198
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_su62x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_yp72a")
+theme_override_font_sizes/font_size = 40
+text = "player_name"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_4jbjk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0bks8")
+value = 40.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_under = SubResource("CanvasTexture_s3rii")
+
+[node name="SkillButtonPanel" type="Panel" parent="PanelContainer"]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_su62x")
+
+[node name="Skill1" type="Button" parent="PanelContainer/SkillButtonPanel"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 190.0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yp72a")
+text = "skill1"
+
+[node name="Skill2" type="Button" parent="PanelContainer/SkillButtonPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.127
+offset_left = 200.0
+offset_top = 10.0
+offset_right = 273.6
+offset_bottom = 164.6
+text = "skill2"
+
+[node name="Skill3" type="Button" parent="PanelContainer/SkillButtonPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.127
+offset_left = 350.0
+offset_top = 10.0
+offset_right = 423.6
+offset_bottom = 164.6
+text = "skill3
+"
+
+[node name="Skill4" type="Button" parent="PanelContainer/SkillButtonPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.127
+offset_left = 500.0
+offset_top = 10.0
+offset_right = 573.6
+offset_bottom = 164.6
+text = "skill4
+"
+
+[node name="Skill5" type="Button" parent="PanelContainer/SkillButtonPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.127
+offset_left = 650.0
+offset_top = 10.0
+offset_right = 723.6
+offset_bottom = 164.6
+text = "skill5
+"
+
+[node name="OtherButtonPanel" type="Panel" parent="PanelContainer"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_s3rii")
+
+[node name="BackPack" type="Button" parent="PanelContainer/OtherButtonPanel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 115.0
+offset_right = 310.0
+offset_bottom = 175.0
+text = "Backpack
+"
+
+[node name="NormalAttack" type="Button" parent="PanelContainer/OtherButtonPanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 155.0
+offset_bottom = 85.0
+text = "Normal Attack"
+
+[node name="NormalDefend" type="Button" parent="PanelContainer/OtherButtonPanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 115.0
+offset_right = 155.0
+offset_bottom = 175.0
+text = "Normal Defend"
+
+[node name="TakeBreak" type="Button" parent="PanelContainer/OtherButtonPanel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 25.0
+offset_right = 310.0
+offset_bottom = 85.0
+text = "TakeBreak
+"
+
+[node name="Player" parent="PanelContainer" instance=ExtResource("3_mbs16")]
+position = Vector2(316, 216)
+scale = Vector2(2.62629, 2.62629)
+
+[node name="Backpack" parent="." instance=ExtResource("3_0bks8")]
+visible = false
+layout_mode = 1
+anchor_left = -2.31714
+anchor_top = -2.33
+anchor_right = 1.08286
+anchor_bottom = 1.13
+offset_left = 2649.35
+offset_top = 1484.84
+offset_right = 2649.35
+offset_bottom = 1484.84
+script = ExtResource("4_u8s32")
+
+[node name="PlayerHanlder" type="Node" parent="." node_paths=PackedStringArray("_player", "_enemyGenerator")]
+script = ExtResource("6_mbs16")
+_player = NodePath("../PanelContainer/Player")
+_enemyGenerator = NodePath("../EnemyGenerateHandler")
+
+[node name="EnemyGenerateHandler" type="Node" parent="." node_paths=PackedStringArray("_positions")]
+script = ExtResource("7_jwg50")
+_enemyNumbers = 1
+_enemies = Array[PackedScene]([ExtResource("8_1w5oa")])
+_positions = [NodePath("../Node2D")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(821, 264)
+
+[connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="button_down" from="PanelContainer/SkillButtonPanel/Skill2" to="PanelContainer/SkillButtonPanel/Skill2" method="_on_button_down"]
+[connection signal="button_up" from="PanelContainer/SkillButtonPanel/Skill2" to="PanelContainer/SkillButtonPanel/Skill2" method="_on_button_up"]
+[connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill3" to="." method="_on_skill_3_pressed"]
+[connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill4" to="." method="_on_skill_4_pressed"]
+[connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill5" to="." method="_on_skill_5_pressed"]
+[connection signal="pressed" from="PanelContainer/OtherButtonPanel/BackPack" to="." method="_on_back_pack_pressed"]
+[connection signal="pressed" from="PanelContainer/OtherButtonPanel/BackPack" to="Backpack" method="_on_back_pack_pressed"]
+[connection signal="pressed" from="PanelContainer/OtherButtonPanel/NormalAttack" to="." method="_on_normal_attack_pressed"]
+[connection signal="pressed" from="PanelContainer/OtherButtonPanel/NormalDefend" to="." method="_on_normal_defend_pressed"]
+[connection signal="pressed" from="PanelContainer/OtherButtonPanel/TakeBreak" to="." method="_on_take_break_pressed"]

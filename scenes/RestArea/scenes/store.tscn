@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://027dttu1vl3i"]
+
+[ext_resource type="Texture2D" uid="uid://c1m3b4ag3jvuk" path="res://asset/1.png" id="1_jrdpq"]
+[ext_resource type="Script" uid="uid://c6y4u5twi2be2" path="res://scenes/RestArea/scripts/store.gd" id="1_slxf3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrdpq"]
+radius = 20.0
+
+[node name="store" type="Area2D" node_paths=PackedStringArray("store_label")]
+script = ExtResource("1_slxf3")
+store_label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0755236, 0.0755236)
+texture = ExtResource("1_jrdpq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_jrdpq")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 25.0
+offset_top = -16.0
+offset_right = 197.0
+offset_bottom = 33.0
+scale = Vector2(0.323941, 0.323941)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "按E購買石中劍
+design by林紘睿"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
