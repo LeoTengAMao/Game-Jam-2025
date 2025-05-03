@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhpi6qa0bk82y"]
+
+[ext_resource type="Script" path="res://script/game.gd" id="1_v1npp"]
+[ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://yasuo.tscn" id="2_wdcr7"]
+[ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="3_dln84"]
+[ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="4_pofri"]
+[ext_resource type="Script" uid="uid://6ygrawtnlyht" path="res://script/EnemyGenerateHandler.cs" id="5_pofri"]
+[ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="8_u045r"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_v1npp")
+
+[node name="Interface" parent="." instance=ExtResource("3_dln84")]
+z_index = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 575.0
+offset_bottom = 325.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 4
+
+[node name="CombatHandler" type="Node" parent="." node_paths=PackedStringArray("_player", "_enemyGenerator")]
+script = ExtResource("8_u045r")
+_player = NodePath("../player")
+_enemyGenerator = NodePath("../Enemy/EnemyGenerator")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
+
+[node name="player" parent="." instance=ExtResource("4_pofri")]
+_hp = 5
+_atk = 5
+_def = 5
+_spd = 5
+_actionPoint = 2
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="EnemyPositions" type="Node" parent="Enemy"]
+
+[node name="Enemy1" type="Node2D" parent="Enemy/EnemyPositions"]
+position = Vector2(153, 44)
+
+[node name="Enemy2" type="Node2D" parent="Enemy/EnemyPositions"]
+position = Vector2(153, -95)
+
+[node name="Enemy3" type="Node2D" parent="Enemy/EnemyPositions"]
+position = Vector2(359, 52)
+
+[node name="Enemy4" type="Node2D" parent="Enemy/EnemyPositions"]
+position = Vector2(365, -95)
+
+[node name="EnemyGenerator" type="Node" parent="Enemy" node_paths=PackedStringArray("_positions")]
+script = ExtResource("5_pofri")
+_enemies = Array[PackedScene]([ExtResource("2_wdcr7")])
+_positions = [NodePath("../EnemyPositions/Enemy1")]

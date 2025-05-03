@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ce6iv18ho1r2f"]
+[gd_scene load_steps=13 format=3 uid="uid://cj5ilt1wvlojp"]
 
 [ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="1_a23gj"]
+[ext_resource type="Script" uid="uid://d4kfawgmftoqc" path="res://script/Yasuo.cs" id="1_toksv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15ci4"]
 atlas = ExtResource("1_a23gj")
@@ -69,6 +70,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a23gj"]
 
 [node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_toksv")
+Hp = 3
+Atk = 7
+Def = 1
+Spd = 5
+Lines = 1
+Planes = 1
+AppearChance = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.42424, 2.24242)
