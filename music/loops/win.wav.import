@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b3slju3157p44"
-path="res://.godot/imported/chill_loop.wav-2598907f9b5ef1a00a5bd85f06668bb9.sample"
+uid="uid://6mtjpxc4kocq"
+path="res://.godot/imported/win.wav-bc6b9ce28447327d629e8e3510fe31eb.sample"
 
 [deps]
 
-source_file="res://music/loops/chill_loop.wav"
-dest_files=["res://.godot/imported/chill_loop.wav-2598907f9b5ef1a00a5bd85f06668bb9.sample"]
+source_file="res://music/loops/win.wav"
+dest_files=["res://.godot/imported/win.wav-bc6b9ce28447327d629e8e3510fe31eb.sample"]
 
 [params]
 
