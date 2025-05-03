@@ -81,4 +81,4 @@ func _on_exit_button_pressed():
 	Global.dot = player_point
 	Global.line = player_line
 	Global.face = player_plane
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://scenes/RestArea/scenes/rest_area.tscn")
