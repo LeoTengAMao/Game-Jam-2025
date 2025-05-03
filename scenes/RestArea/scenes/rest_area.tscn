@@ -2,16 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://b3nv8qbv2o64n" path="res://asset/start_background.jpg" id="1_6y5kl"]
 [ext_resource type="Script" uid="uid://bawc12qojxdhw" path="res://scenes/RestArea/scripts/rest_area.gd" id="1_q2jxg"]
-[ext_resource type="PackedScene" uid="uid://027dttu1vl3i" path="res://scenes/RestArea/scenes/store.tscn" id="1_y27ks"]
 [ext_resource type="PackedScene" uid="uid://cigmugs4fxxyr" path="res://scenes/RestArea/scenes/player.tscn" id="2_6y5kl"]
+[ext_resource type="PackedScene" uid="uid://cwt2p0miar0ed" path="res://scenes/RestArea/scenes/shop.tscn" id="4_ilovm"]
 
 [node name="RestArea" type="Node2D"]
+scale = Vector2(1.00369, 0.985425)
 script = ExtResource("1_q2jxg")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("1_6y5kl")
-
-[node name="store" parent="." instance=ExtResource("1_y27ks")]
 
 [node name="player" parent="." instance=ExtResource("2_6y5kl")]
 position = Vector2(-252, 17)
@@ -19,3 +18,7 @@ scale = Vector2(0.263738, 0.263738)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.165, 1.165)
+
+[node name="shop" parent="." instance=ExtResource("4_ilovm")]
+position = Vector2(40.8494, -156.278)
+scale = Vector2(0.324085, 0.324085)
