@@ -17,8 +17,16 @@ public partial class PlayerHandler : Node
 		Player = new Player(_hp, _atk, _def, _spd, _actionPoint);
 	}
 
-	public void UseAttack(Entity target)
+	public void UseAttackSkill(Entity target)
 	{
 		Player.UseAttackSkill(target);
+	}
+	public void UseDefenceSkill()
+	{
+		Player.UseDefenceSkill();
+	}
+	public void UseSkill(int skillIdx, Entity target)
+	{
+		Player.UseSkill(skillIdx, target);
 	}
 }

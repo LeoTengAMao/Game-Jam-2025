@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc6m23rtumnqt"]
+[gd_scene load_steps=11 format=3 uid="uid://cc6m23rtumnqt"]
 
 [ext_resource type="Texture2D" uid="uid://wsklgbptic4s" path="res://sprite/StickmanPack/Idle/Thin.png" id="1_glu0s"]
+[ext_resource type="Script" uid="uid://db7g75aijhv8w" path="res://script/PlayerHandler.cs" id="1_xlvtu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlvtu"]
 radius = 9.05539
@@ -56,6 +57,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xlvtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xlvtu")
