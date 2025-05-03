@@ -1,4 +1,5 @@
 using Godot;
+using 新遊戲專案.script;
 
 namespace 新遊戲專案.scenes;
 
@@ -25,6 +26,9 @@ public partial class BasicEnemy : Node
 
 	public override void _Process(double delta)
 	{
-		if (Enemy.CurrentHp <= 0) QueueFree();
+		if (Enemy.CurrentHp <= 0)
+		{
+			QueueFree();
+		}
 	}
 }

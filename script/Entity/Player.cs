@@ -8,6 +8,7 @@ public partial class Player: Entity
 	private int _effectSpd = 0;
 	private int _effectActionPoint = 0;
 
+	public int CurrentMaxHp => MaxHp;
 	public int CurrentHp => Hp + _effectHp;
 	public int CurrentAtk => Atk + _effectAtk;
 	public int CurrentDef => Def + _effectDef;

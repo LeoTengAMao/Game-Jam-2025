@@ -7,18 +7,23 @@ namespace 新遊戲專案.script;
 public partial class EnemyGenerateHandler : Node
 {
 	private int _enemyNumbers;
-	[Export] private Godot.Collections.Array<PackedScene> _enemies = new();
-	[Export] private Godot.Collections.Array<Node2D> _positions = new();
+	[Export] private Godot.Collections.Array<PackedScene> _howlingCanyon;
+	[Export] private Godot.Collections.Array<PackedScene> _sharpGrassland;
+	[Export] private Godot.Collections.Array<Node2D> _positions;
+
+	private List<Godot.Collections.Array<PackedScene>> _enemies;
 	private BasicEnemy[] _targets = new BasicEnemy[1];
-	public override void _Ready()
+	public void Init()
 	{
-		Init();
+		_enemies = new List<Godot.Collections.Array<PackedScene>> { _howlingCanyon, _sharpGrassland };
 	}
-	private void Init()
+
+	public void Generate(int idx)
 	{
+		var currentAreaEnemies = _enemies[idx];
 		_enemyNumbers = _positions.Count;
-		var randomIndex = GD.Randi() % _enemies.Count;
-		var enemyScene = _enemies[(int)randomIndex];
+		var randomIndex = GD.Randi() % currentAreaEnemies.Count;
+		var enemyScene = currentAreaEnemies[(int)randomIndex];
 		var enemy = (BasicEnemy)enemyScene.Instantiate();
 		_targets[0] = enemy;
 		AddChild(enemy);

@@ -1,38 +1,38 @@
 [gd_scene load_steps=13 format=3 uid="uid://cj5ilt1wvlojp"]
 
-[ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="1_a23gj"]
-[ext_resource type="Script" uid="uid://d4kfawgmftoqc" path="res://script/Yasuo.cs" id="1_toksv"]
+[ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_8na1r"]
+[ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="2_sv7m6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15ci4"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(0, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rwbp"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(66, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mg045"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(132, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufo32"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(0, 66, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kbc6"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(66, 66, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxapp"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(132, 66, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioebm"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(0, 132, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7hly"]
-atlas = ExtResource("1_a23gj")
+atlas = ExtResource("2_sv7m6")
 region = Rect2(66, 132, 66, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_il1ph"]
@@ -70,14 +70,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a23gj"]
 
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_toksv")
-Hp = 3
-Atk = 7
+script = ExtResource("1_8na1r")
+Hp = 5
+Atk = 5
 Def = 1
 Spd = 5
-Lines = 1
-Planes = 1
-AppearChance = 4
+Points = 5
+Lines = 5
+Planes = 5
+AppearChance = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.42424, 2.24242)

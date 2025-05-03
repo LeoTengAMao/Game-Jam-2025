@@ -10,7 +10,7 @@ public abstract class Entity
 
     protected Entity(int hp, int atk, int def, int spd)
     {
-        MaxHp = Hp;
+        MaxHp = hp;
         Hp = hp;
         Atk = atk;
         Def = def;
@@ -22,5 +22,10 @@ public abstract class Entity
         int loseHp = damage - Def;
         if (loseHp < 1) loseHp = 1;
         Hp -= loseHp;
+    }
+
+    public bool IsDead()
+    {
+        return Hp <= 0;
     }
 }

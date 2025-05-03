@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://ycl7tydyyq5t"]
+
+[ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_x1wlj"]
+[ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="2_pasok"]
+[ext_resource type="Texture2D" uid="uid://dsya66i4txoct" path="res://entity/Sprite-0001-Sheet.png" id="3_pasok"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ci4"]
+atlas = ExtResource("2_pasok")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rwbp"]
+atlas = ExtResource("2_pasok")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg045"]
+atlas = ExtResource("2_pasok")
+region = Rect2(132, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufo32"]
+atlas = ExtResource("2_pasok")
+region = Rect2(0, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kbc6"]
+atlas = ExtResource("2_pasok")
+region = Rect2(66, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxapp"]
+atlas = ExtResource("2_pasok")
+region = Rect2(132, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioebm"]
+atlas = ExtResource("2_pasok")
+region = Rect2(0, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7hly"]
+atlas = ExtResource("2_pasok")
+region = Rect2(66, 132, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il1ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ci4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rwbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg045")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufo32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kbc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxapp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioebm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7hly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pasok")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a23gj"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_x1wlj")
+Hp = 2
+Atk = 1000
+Def = 5
+Spd = 5
+Points = 5
+Lines = 5
+Planes = 5
+AppearChance = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.42424, 2.24242)
+sprite_frames = SubResource("SpriteFrames_il1ph")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.464089
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a23gj")

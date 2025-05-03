@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhpi6qa0bk82y"]
+[gd_scene load_steps=10 format=3 uid="uid://bhpi6qa0bk82y"]
 
 [ext_resource type="Script" path="res://script/game.gd" id="1_v1npp"]
-[ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://yasuo.tscn" id="2_wdcr7"]
+[ext_resource type="Resource" uid="uid://je6u1uxlm3p0" path="res://Inventory/Item/PlayerInv.tres" id="3_2bap4"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="3_dln84"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="4_pofri"]
 [ext_resource type="Script" uid="uid://6ygrawtnlyht" path="res://script/EnemyGenerateHandler.cs" id="5_pofri"]
+[ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://entity/yasuo.tscn" id="6_wdcr7"]
+[ext_resource type="PackedScene" uid="uid://ycl7tydyyq5t" path="res://entity/StoneFiveHeadMan.tscn" id="7_dln84"]
+[ext_resource type="PackedScene" uid="uid://dyqddqngfxg4e" path="res://entity/yasuo1.tscn" id="8_pofri"]
 [ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="8_u045r"]
 
 [node name="Game" type="Node2D"]
@@ -15,13 +18,14 @@ z_index = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -575.0
-offset_top = -325.0
-offset_right = 575.0
-offset_bottom = 325.0
+offset_left = -514.0
+offset_top = -344.0
+offset_right = 636.0
+offset_bottom = 306.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 4
+inv = ExtResource("3_2bap4")
 
 [node name="CombatHandler" type="Node" parent="." node_paths=PackedStringArray("_player", "_enemyGenerator")]
 script = ExtResource("8_u045r")
@@ -56,5 +60,5 @@ position = Vector2(365, -95)
 
 [node name="EnemyGenerator" type="Node" parent="Enemy" node_paths=PackedStringArray("_positions")]
 script = ExtResource("5_pofri")
-_enemies = Array[PackedScene]([ExtResource("2_wdcr7")])
+_howlingCanyon = Array[PackedScene]([ExtResource("6_wdcr7"), ExtResource("7_dln84"), ExtResource("8_pofri")])
 _positions = [NodePath("../EnemyPositions/Enemy1")]
