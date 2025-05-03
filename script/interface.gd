@@ -21,6 +21,12 @@ func _ready() -> void:
 
 func SwitchRestScene() -> void:
 	print("you win")
+	'''
+	TODO:
+	# global stage += 1;
+	# if stage > 5:
+		# switch to scene hightechCG
+	'''
 	
 func ResetGame() -> void:
 	print("you lost")
