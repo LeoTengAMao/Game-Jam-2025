@@ -1,33 +1,30 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwq4gxvyy8hvw"]
 
+[ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
-[ext_resource type="Script" uid="uid://csqk6a46awi62" path="res://script/game.gd" id="1_s0nni"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
-[ext_resource type="Script" path="res://entity/player.gd" id="3_cpr0p"]
-[ext_resource type="PackedScene" uid="uid://ce6iv18ho1r2f" path="res://Enemy.tscn" id="4_78awf"]
+[ext_resource type="Script" uid="uid://lqp4m587qkh8" path="res://entity/player.gd" id="3_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://cjws71pcrqeuu" path="res://UI/health_bar.tscn" id="5_s0nni"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_s0nni")
+script = ExtResource("1_78awf")
 
-[node name="yasuo" parent="." instance=ExtResource("4_78awf")]
-position = Vector2(169, 30)
-
-[node name="Interface" parent="." instance=ExtResource("1_qbsmt")]
-z_index = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -511.0
-offset_top = -323.0
-offset_right = 639.0
-offset_bottom = 327.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.888963, 0.983511)
-size_flags_horizontal = 4
+[node name="HealthBar" parent="." instance=ExtResource("5_s0nni")]
+offset_left = -512.0
+offset_top = -389.0
+offset_right = -512.0
+offset_bottom = -389.0
+mouse_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2
 
 [node name="player" parent="." instance=ExtResource("2_cpr0p")]
 script = ExtResource("3_cpr0p")
+
+[node name="Interface" parent="." instance=ExtResource("1_qbsmt")]
+custom_minimum_size = Vector2(1000, 768)
+offset_left = -509.0
+offset_top = -379.0
+offset_right = 519.0
+offset_bottom = 389.0

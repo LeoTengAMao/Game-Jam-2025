@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://wygw1iwcwcc3"]
+[gd_scene load_steps=17 format=3 uid="uid://wygw1iwcwcc3"]
 
 [ext_resource type="Script" uid="uid://chp54sf0lge6r" path="res://Inventory/Item/start.gd" id="1_c3uo2"]
 [ext_resource type="Texture2D" uid="uid://kfnwdd7bftsy" path="res://sprite/4.png" id="1_weqrf"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_aljgq"]
-[ext_resource type="Texture2D" uid="uid://cyndwadv6fyet" path="res://sprite/pixelCardAssest.png" id="2_gum4d"]
-[ext_resource type="Texture2D" uid="uid://bics4k0xm35dh" path="res://sprite/StickmanPack/Run/Run.png" id="4_c3uo2"]
+[ext_resource type="Texture2D" uid="uid://crsdy4cn0i520" path="res://sprite/PlayerSprite/Main_charater_IDLE.png" id="4_aljgq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aljgq"]
 
@@ -12,56 +11,46 @@
 texture = ExtResource("1_weqrf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upo8e"]
-texture = ExtResource("2_gum4d")
 region_rect = Rect2(360.606, 261.015, 98.1819, 31.5151)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_282qh"]
-texture = ExtResource("2_gum4d")
-region_rect = Rect2(252.727, 272.53, 96.3637, 20)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e56ob"]
-texture = ExtResource("2_gum4d")
-region_rect = Rect2(251.515, 223.439, 96.3637, 27.8788)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3uo2"]
+atlas = ExtResource("4_aljgq")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upo8e"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(0, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_282qh"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(64, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ob"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(128, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xt1ke"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(192, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(128, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqfr5"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(256, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(256, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekn4r"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(320, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(0, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ef0h"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5qcb"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jtjo4"]
-atlas = ExtResource("4_c3uo2")
-region = Rect2(512, 0, 64, 64)
+atlas = ExtResource("4_aljgq")
+region = Rect2(128, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oob4q"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3uo2")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_upo8e")
 }, {
@@ -82,16 +71,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2ef0h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5qcb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jtjo4")
 }],
 "loop": true,
-"name": &"default",
-"speed": 15.0
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Control" type="Control"]
@@ -128,26 +111,26 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_aljgq")
 theme_override_font_sizes/font_size = 60
 text = "火柴人的進化之路
+(點擊山洞開始)
 "
 
 [node name="Button" type="Button" parent="PanelContainer/Panel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 165.0
-offset_top = 454.0
-offset_right = 340.0
-offset_bottom = 520.0
+offset_left = 177.0
+offset_top = 146.0
+offset_right = 352.0
+offset_bottom = 267.0
 theme_override_fonts/font = ExtResource("2_aljgq")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/hover = SubResource("StyleBoxTexture_upo8e")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_282qh")
-theme_override_styles/normal = SubResource("StyleBoxTexture_e56ob")
-text = "Start"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/Panel"]
-position = Vector2(623, 349)
-scale = Vector2(2.78906, 3.02344)
+position = Vector2(376, 241)
+scale = Vector2(1.48242, 1.40039)
 sprite_frames = SubResource("SpriteFrames_oob4q")
-autoplay = "default"
+animation = &"new_animation"
+autoplay = "new_animation"
 speed_scale = 2.0
 
 [connection signal="pressed" from="PanelContainer/Panel/Button" to="." method="_on_button_pressed"]

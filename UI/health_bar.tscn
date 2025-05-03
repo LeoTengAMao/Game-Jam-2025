@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjws71pcrqeuu"]
+
+[ext_resource type="Script" uid="uid://cv361qqgd473o" path="res://UI/health_bar.gd" id="1_0yf5l"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_tqipt"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0yf5l")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_right = 1024.0
+offset_bottom = 768.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlayerName" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tqipt")
+theme_override_font_sizes/font_size = 35
+text = "Name"
+
+[node name="HealthBar" type="ProgressBar" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2

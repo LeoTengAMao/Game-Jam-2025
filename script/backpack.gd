@@ -9,23 +9,7 @@ func _ready():
 	Global.BackPackIsOpen = false
 	visible = false  
 	
-	var sword := InvItem.new()
-	sword.name = "Iron Sword"
-	sword.texture = preload("res://sprite/Stick.png")
-
-	var another_sword := InvItem.new()
-	another_sword.name = "Iron Sword"
-	another_sword.texture = preload("res://sprite/Stick.png")
-
-	Global.inv.AddItems(sword)
-	Global.inv.AddItems(another_sword)
-
-	print("Before remove:", Global.inv.items.size())  # 2
-
-	Global.inv.RemoveItems(sword)  # 只移除你傳入的那個物件，另一個同名不受影響
-
-	print("After remove:", Global.inv.items.size())  # 1
-	update_slots()
+	
 
 func update_slots():
 	for i in range(min(Global.inv.items.size(),slots.size())):
