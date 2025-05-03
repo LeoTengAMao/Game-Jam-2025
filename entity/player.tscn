@@ -65,4 +65,4 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vaiil")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.0740599
+frame_progress = 0.11637

@@ -22,7 +22,7 @@ func _ready():
 
 	print("Before remove:", Global.inv.items.size())  # 2
 
-	#Global.inv.RemoveItems(sword)  # 只移除你傳入的那個物件，另一個同名不受影響
+	Global.inv.RemoveItems(sword)  # 只移除你傳入的那個物件，另一個同名不受影響
 
 	print("After remove:", Global.inv.items.size())  # 1
 	update_slots()
