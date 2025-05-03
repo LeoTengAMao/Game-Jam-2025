@@ -16,8 +16,11 @@ func _ready():
 
 	update_currency_display()
 
+<<<<<<< HEAD
 	$FX.stream = load("res://asset/sound/レジスターで精算.mp3")
 
+=======
+>>>>>>> f89fe206672c7b4297b80ccfe9bf218f7695e51f
 	$Label.position = Vector2(10, 10)
 	$Label.add_theme_font_size_override("font_size", 36)
 
