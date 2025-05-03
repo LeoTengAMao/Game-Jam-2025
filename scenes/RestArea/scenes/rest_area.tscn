@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddr2smarvt7c6"]
+[gd_scene load_steps=6 format=3 uid="uid://ddr2smarvt7c6"]
 
 [ext_resource type="Texture2D" uid="uid://b3nv8qbv2o64n" path="res://asset/start_background.jpg" id="1_6y5kl"]
 [ext_resource type="Script" uid="uid://bawc12qojxdhw" path="res://scenes/RestArea/scripts/rest_area.gd" id="1_q2jxg"]
 [ext_resource type="PackedScene" uid="uid://cigmugs4fxxyr" path="res://scenes/RestArea/scenes/player.tscn" id="2_6y5kl"]
 [ext_resource type="PackedScene" uid="uid://cwt2p0miar0ed" path="res://scenes/RestArea/scenes/shop.tscn" id="4_ilovm"]
+[ext_resource type="AudioStream" uid="uid://ctma0tc3fnjxb" path="res://original_sound/BGM/wizard_loop.wav" id="5_fyi4p"]
 
 [node name="RestArea" type="Node2D"]
 scale = Vector2(1.00369, 0.985425)
@@ -22,3 +23,7 @@ zoom = Vector2(1.165, 1.165)
 [node name="shop" parent="." instance=ExtResource("4_ilovm")]
 position = Vector2(40.8494, -156.278)
 scale = Vector2(0.324085, 0.324085)
+
+[node name="BGM" type="AudioStreamPlayer" parent="shop"]
+stream = ExtResource("5_fyi4p")
+autoplay = true
