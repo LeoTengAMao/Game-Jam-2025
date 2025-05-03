@@ -16,20 +16,22 @@ func _ready():
 
 	update_currency_display()
 
-	$BGM.stream = load("res://music/loops/chill_loop.wav")
-	$BGM.play()
-	$FX.stream = load("res://music/FX/woosh.mp3")
+	$FX.stream = load("res://music/FX/woosh.wav")
 
 	$Label.position = Vector2(10, 10)
 	$Label.add_theme_font_size_override("font_size", 36)
 
-	add_item($item01, "res://store/items/potion.png", "炸彈", [3, 3, 3], [190, 30])
-	add_item($item02, "res://store/items/potion.png", "藥水", [2, 1, 1], [390, 30])
-	add_item($item03, "res://store/items/potion.png", "羽毛", [0, 4, 1], [590, 30])
+	add_item($item01, "res://store/items/potion.png", "炸彈", [3, 3, 3], [170, 30])
+	add_item($item02, "res://store/items/potion.png", "藥水", [2, 1, 1], [375, 30])
+	add_item($item03, "res://store/items/potion.png", "羽毛", [0, 4, 1], [580, 30])
 	add_item($item04, "res://store/items/potion.png", "蘋果", [1, 2, 0], [790, 30])
+	add_item($item05, "res://store/items/potion.png", "炸彈", [3, 3, 3], [100, 430])
+	add_item($item06, "res://store/items/potion.png", "藥水", [2, 1, 1], [305, 430])
+	add_item($item07, "res://store/items/potion.png", "羽毛", [0, 4, 1], [510, 430])
+	add_item($item08, "res://store/items/potion.png", "蘋果", [1, 2, 0], [710, 430])
 	
 	var exit_button = $exit  # 這是你在場景中創建的按鈕
-	exit_button.position = Vector2(830,680)
+	exit_button.position = Vector2(830,360)
 	exit_button.custom_minimum_size = Vector2(128, 64)
 	exit_button.text = "EXIT"
 	exit_button.add_theme_font_size_override("font_size", 36)
