@@ -16,14 +16,14 @@ func _ready():
 	$Label.position = Vector2(10, 10)
 	$Label.add_theme_font_size_override("font_size", 36)
 
-	add_item($item01, "res://store/other_pic/bomb.png", "像素劍", [0, 4, 1], [170, 30])
-	add_item($item02, "res://store/items/potion.png", "戰槌", [0, 6, 1], [375, 30])
-	add_item($item03, "res://store/other_pic/fire_stick.png", "看不劍", [16, 0, 0], [580, 30])
-	add_item($item04, "res://store/items/potion.png", "遠劍", [0, 6, 4], [790, 30])
-	add_item($item05, "res://store/items/potion.png", "正方形", [0, 0, 1], [100, 430])
-	add_item($item06, "res://store/items/potion.png", "斗笠", [0, 10, 0], [305, 430])
-	add_item($item07, "res://store/items/potion.png", "看不見", [16, 0, 0], [510, 430])
-	add_item($item08, "res://store/items/potion.png", "魔法斗篷", [0, 0, 6], [715, 430])
+	add_item($item01, "res://store/other_pic/pixel_sword.png", "像素劍", [0, 4, 1], [170, 30])
+	add_item($item02, "res://store/other_pic/hammer.png", "戰槌", [0, 6, 1], [375, 30])
+	add_item($item03, "res://store/other_pic/ucantseesword.png", "看不劍", [16, 0, 0], [580, 30])
+	add_item($item04, "res://store/other_pic/firewall.png", "防火牆", [0, 6, 4], [790, 30])
+	add_item($item05, "res://store/other_pic/sqr.png", "正方形", [0, 0, 1], [100, 430])
+	add_item($item06, "res://store/other_pic/long_sword.png", "斗笠", [0, 10, 0], [305, 430])
+	add_item($item07, "res://store/items/potion.png", "遠劍", [16, 0, 0], [510, 430])
+	add_item($item08, "res://store/other_pic/miracle_seastar.png", "神奇海星", [0, 0, 6], [715, 430])
 	
 	var exit_button = $exit
 	exit_button.position = Vector2(830,340)

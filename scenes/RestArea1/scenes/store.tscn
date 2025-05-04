@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ojk6pt8dcxk"]
+
+[ext_resource type="Script" uid="uid://dxcj6q23s6btj" path="res://scenes/RestArea1/scripts/store.gd" id="1_i466x"]
+[ext_resource type="AudioStream" uid="uid://b3slju3157p44" path="res://original_sound/BGM/chill_loop.wav" id="2_1igdg"]
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i466x")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1034.0
+offset_bottom = 1246.0
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="item01" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 17.0
+offset_right = 286.0
+offset_bottom = 90.0
+
+[node name="t" type="TextureRect" parent="item01"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item02" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item02"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item03" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 331.0
+offset_bottom = 34.0
+
+[node name="t" type="TextureRect" parent="item03"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item04" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item04"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item05" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item05"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item06" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item06"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item07" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item07"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="item08" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 26.0
+offset_right = 361.0
+offset_bottom = 66.0
+
+[node name="t" type="TextureRect" parent="item08"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1igdg")
+autoplay = true
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
