@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d007kwo5t0osa"]
 
-[ext_resource type="Script" path="res://script/TurnManager.gd" id="1_78awf"]
+[ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
 [ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="5_aug50"]
@@ -24,6 +24,11 @@ z_index = 2
 
 [node name="player" parent="." instance=ExtResource("2_cpr0p")]
 position = Vector2(-254, -5)
+_hp = 5
+_atk = 1
+_def = 5
+_spd = 5
+_actionPoint = 5
 
 [node name="Interface" parent="." instance=ExtResource("1_qbsmt")]
 z_index = 2
