@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwq4gxvyy8hvw"]
+[gd_scene load_steps=16 format=3 uid="uid://bwq4gxvyy8hvw"]
 
 [ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dvcu1cwg1bh76" path="res://entity/Howling/Summoner.tscn" id="11_r7sob"]
 [ext_resource type="PackedScene" uid="uid://bhloryvpkywwn" path="res://entity/Howling/Zed.tscn" id="12_y5y3l"]
 [ext_resource type="PackedScene" uid="uid://c1fsven1joy1n" path="res://UI/Enemy_health_bar.tscn" id="13_2rd6h"]
+[ext_resource type="Texture2D" uid="uid://b0xjyyljh13qp" path="res://sprite/7.png" id="14_7ua8r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7sob"]
+texture = ExtResource("14_7ua8r")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_78awf")
@@ -60,7 +64,15 @@ _positions = [NodePath("../EnemyPosition/Enemy1")]
 position = Vector2(217, 2)
 
 [node name="Enemy_health" parent="." instance=ExtResource("13_2rd6h")]
+z_index = 1
 offset_left = 317.0
 offset_top = -353.0
 offset_right = 317.0
 offset_bottom = -353.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -507.0
+offset_top = -381.0
+offset_right = 513.0
+offset_bottom = 380.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_r7sob")

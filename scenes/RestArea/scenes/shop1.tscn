@@ -1,35 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://wooujoyjh8g"]
+[gd_scene load_steps=8 format=3 uid="uid://cjv1o3su1rs5s"]
 
-[ext_resource type="Script" uid="uid://cbyg1gs7lv43n" path="res://scenes/RestArea1/scripts/shop.gd" id="1_s33f4"]
+[ext_resource type="Script" uid="uid://bmhjw5kgr7qte" path="res://scenes/RestArea/scripts/shop1.gd" id="1_6h8k8"]
+[ext_resource type="Texture2D" uid="uid://ch8pdkxjt4b7m" path="res://sprite/crafting table.png" id="2_6h8k8"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_m56m7"]
-[ext_resource type="Texture2D" uid="uid://ca3bemyf7b734" path="res://asset/2_1.png" id="2_s33f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m56m7"]
-size = Vector2(116, 310)
+size = Vector2(146, 169.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytjse"]
-atlas = ExtResource("2_s33f4")
-region = Rect2(0, 0, 793, 1122)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_spbdq"]
-atlas = ExtResource("2_s33f4")
-region = Rect2(793, 0, 793, 1122)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k54f5"]
-atlas = ExtResource("2_s33f4")
-region = Rect2(0, 1122, 793, 1122)
+[sub_resource type="AtlasTexture" id="AtlasTexture_devtw"]
+atlas = ExtResource("2_6h8k8")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s33f4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ytjse")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_spbdq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k54f5")
+"texture": SubResource("AtlasTexture_devtw")
 }],
 "loop": true,
 "name": &"default",
@@ -37,22 +23,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33f4"]
-size = Vector2(117, 309)
+size = Vector2(150.872, 135.623)
 
 [node name="shop" type="Area2D" node_paths=PackedStringArray("shop_intro")]
-script = ExtResource("1_s33f4")
+script = ExtResource("1_6h8k8")
 shop_intro = NodePath("Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(72, 170)
+position = Vector2(78, 120.25)
 shape = SubResource("RectangleShape2D_m56m7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(75, 148)
-scale = Vector2(0.365069, 0.452771)
+position = Vector2(78, 111)
+scale = Vector2(1.43281, 1.45678)
 sprite_frames = SubResource("SpriteFrames_s33f4")
-frame_progress = 0.0533211
-flip_h = true
+frame_progress = 0.748793
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -62,13 +47,13 @@ offset_right = 330.0
 offset_bottom = 139.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m56m7")
-theme_override_font_sizes/font_size = 60
-text = "按E進入藥水商店"
+theme_override_font_sizes/font_size = 30
+text = "按E進入合成台"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(72, 170)
+position = Vector2(76.1775, 120.596)
 scale = Vector2(0.74, 0.935)
 shape = SubResource("RectangleShape2D_s33f4")
 

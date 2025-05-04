@@ -42,6 +42,7 @@ theme_override_font_sizes/font_size = 35
 text = "Name"
 
 [node name="HealthBar" type="ProgressBar" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_0yf5l")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tqipt")
