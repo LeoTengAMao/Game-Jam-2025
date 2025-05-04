@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rmruhru8v637"]
+[gd_scene load_steps=8 format=3 uid="uid://boka80o7kssao"]
 
 [ext_resource type="Script" uid="uid://cbyg1gs7lv43n" path="res://scenes/RestArea/scripts/shop.gd" id="1_1aftu"]
 [ext_resource type="Texture2D" uid="uid://c2e7jln8yj4lo" path="res://sprite/dungeon_stairs.png" id="2_q5c2a"]
