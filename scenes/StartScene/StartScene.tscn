@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyppo2lb7oht2"]
+[gd_scene load_steps=5 format=3 uid="uid://dyppo2lb7oht2"]
 
 [ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://scenes/StartScene/Scripts/start_scene.gd" id="1_6kmw5"]
 [ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://scenes/StartScene/images/start_background.jpg" id="1_dh5a1"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="3_mbrg8"]
+[ext_resource type="AudioStream" uid="uid://ci1eygqt5pvux" path="res://original_sound/BGM/credit_loop.wav" id="4_0gnf0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6kmw5")
@@ -38,5 +39,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_mbrg8")
 theme_override_font_sizes/font_size = 60
 text = "請輸入你的名字"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0gnf0")
+autoplay = true
 
 [connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_line_edit_text_submitted"]
