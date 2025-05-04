@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://jrfeu3xt5ig"]
+
+[ext_resource type="Script" path="res://scenes/RestArea/scripts/Stair.gd" id="1_q5c2a"]
+[ext_resource type="Texture2D" uid="uid://c2e7jln8yj4lo" path="res://sprite/dungeon_stairs.png" id="2_q5c2a"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="4_2crup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m56m7"]
+size = Vector2(271, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aftu"]
+atlas = ExtResource("2_q5c2a")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s33f4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aftu")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33f4"]
+size = Vector2(175.676, 74.8663)
+
+[node name="Stair" type="Area2D" node_paths=PackedStringArray("Stair_intro")]
+script = ExtResource("1_q5c2a")
+Stair_intro = NodePath("Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(144.5, 111)
+shape = SubResource("RectangleShape2D_m56m7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(145, 55)
+sprite_frames = SubResource("SpriteFrames_s33f4")
+animation = &"new_animation"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 194.0
+offset_top = -28.0
+offset_right = 392.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2crup")
+theme_override_font_sizes/font_size = 30
+text = "按E進入下一關
+"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, 118)
+scale = Vector2(0.74, 0.935)
+shape = SubResource("RectangleShape2D_s33f4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

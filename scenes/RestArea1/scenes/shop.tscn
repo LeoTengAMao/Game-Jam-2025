@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwt2p0miar0ed"]
+
+[ext_resource type="Script" uid="uid://cbyg1gs7lv43n" path="res://scenes/RestArea/scripts/shop.gd" id="1_s33f4"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_m56m7"]
+[ext_resource type="Texture2D" uid="uid://ca3bemyf7b734" path="res://asset/2_1.png" id="2_s33f4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m56m7"]
+size = Vector2(116, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytjse"]
+atlas = ExtResource("2_s33f4")
+region = Rect2(0, 0, 793, 1122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spbdq"]
+atlas = ExtResource("2_s33f4")
+region = Rect2(793, 0, 793, 1122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k54f5"]
+atlas = ExtResource("2_s33f4")
+region = Rect2(0, 1122, 793, 1122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s33f4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytjse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spbdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k54f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33f4"]
+size = Vector2(117, 309)
+
+[node name="shop" type="Area2D" node_paths=PackedStringArray("shop_intro")]
+script = ExtResource("1_s33f4")
+shop_intro = NodePath("Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(72, 170)
+shape = SubResource("RectangleShape2D_m56m7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(75, 148)
+scale = Vector2(0.365069, 0.452771)
+sprite_frames = SubResource("SpriteFrames_s33f4")
+frame_progress = 0.436034
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 148.0
+offset_top = 85.0
+offset_right = 330.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m56m7")
+theme_override_font_sizes/font_size = 60
+text = "按E進入藥水商店"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(72, 170)
+scale = Vector2(0.74, 0.935)
+shape = SubResource("RectangleShape2D_s33f4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
