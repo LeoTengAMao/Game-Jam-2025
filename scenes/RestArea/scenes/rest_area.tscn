@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cg2upsgmwjxjh" path="res://scenes/RestArea/scenes/player.tscn" id="2_6y5kl"]
 [ext_resource type="Texture2D" uid="uid://dmorbuabypoyr" path="res://sprite/吉米花惹發/5.png" id="2_fyi4p"]
 [ext_resource type="PackedScene" uid="uid://cwt2p0miar0ed" path="res://scenes/RestArea/scenes/shop.tscn" id="4_ilovm"]
-[ext_resource type="AudioStream" uid="uid://ctma0tc3fnjxb" path="res://original_sound/BGM/wizard_loop.wav" id="5_fyi4p"]
+[ext_resource type="PackedScene" uid="uid://bbw45sragwjg0" path="res://scenes/RestArea/scenes/shop1.tscn" id="6_akc8a"]
 [ext_resource type="PackedScene" uid="uid://boka80o7kssao" path="res://scenes/RestArea/scenes/Stair.tscn" id="6_nbrc2"]
 
 [node name="RestArea" type="Node2D"]
@@ -22,13 +22,11 @@ scale = Vector2(0.263738, 0.263738)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.165, 1.165)
 
-[node name="shop" parent="." instance=ExtResource("4_ilovm")]
-position = Vector2(-95.6471, -218.18)
-scale = Vector2(0.324085, 0.324085)
-
-[node name="BGM" type="AudioStreamPlayer" parent="shop"]
-stream = ExtResource("5_fyi4p")
-autoplay = true
-
 [node name="Stair" parent="." instance=ExtResource("6_nbrc2")]
 position = Vector2(-358.676, 126.849)
+
+[node name="shop" parent="." instance=ExtResource("4_ilovm")]
+position = Vector2(203.25, -7.10354)
+
+[node name="shop2" parent="." instance=ExtResource("6_akc8a")]
+position = Vector2(-24.9081, -295.304)

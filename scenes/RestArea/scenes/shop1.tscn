@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbw45sragwjg0"]
+
+[ext_resource type="Script" uid="uid://bmhjw5kgr7qte" path="res://scenes/RestArea/scripts/shop1.gd" id="1_6h8k8"]
+[ext_resource type="Texture2D" uid="uid://b8m1pyvlt0gtq" path="res://asset/Crafting_Table_JE4_BE3.png" id="2_devtw"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_m56m7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m56m7"]
+size = Vector2(116, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s33f4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_devtw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33f4"]
+size = Vector2(117, 110.405)
+
+[node name="shop" type="Area2D" node_paths=PackedStringArray("shop_intro")]
+script = ExtResource("1_6h8k8")
+shop_intro = NodePath("Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, 170.5)
+shape = SubResource("RectangleShape2D_m56m7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(77, 170.54)
+scale = Vector2(0.4, 0.412698)
+sprite_frames = SubResource("SpriteFrames_s33f4")
+frame_progress = 0.748793
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 148.0
+offset_top = 85.0
+offset_right = 330.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m56m7")
+theme_override_font_sizes/font_size = 60
+text = "按E進入合成台"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(77, 173.614)
+scale = Vector2(0.74, 0.935)
+shape = SubResource("RectangleShape2D_s33f4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -9,6 +9,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interaction"):
 		if GlobalRest.in_shop:
 			get_tree().change_scene_to_file("res://scenes/RestArea/scenes/store.tscn")
+		elif GlobalRest.in_shop1:
+			get_tree().change_scene_to_file("res://scenes/RestArea/scenes/store1.tscn")
+			
 		if GlobalRest.in_stair:
 			get_tree().change_scene_to_file("res://scenes/Game.tscn")
 			Global.Floor +=1
