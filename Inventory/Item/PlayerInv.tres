@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("3_lvbed")
-items = Array[ExtResource("1_bmusa")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+items = Array[ExtResource("1_bmusa")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://cto515b7dw7f3"
