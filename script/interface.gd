@@ -21,15 +21,17 @@ func _ready() -> void:
 
 func SwitchRestScene() -> void:
 	print("you win")
-	'''
-	TODO:
-	# global stage += 1;
-	# if stage > 5:
+	Global.Floor += 1;
+	if Global.Floor <= 5:
+		get_tree().change_scene_to_file("res://scenes/game_win.tscn")
+	'''if stage > 5:
 		# switch to scene hightechCG
 	'''
 	
 func ResetGame() -> void:
 	print("you lost")
+	get_tree().change_scene_to_file("res://scenes/game_lose.tscn")
+	
 
 func ForbiddenButton() -> void:
 	visible = false

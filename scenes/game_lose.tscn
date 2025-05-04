@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qhej1khoh5m1"]
+
+[ext_resource type="Script" uid="uid://ba0k2onep8txc" path="res://script/game_lose.gd" id="1_kovt5"]
+[ext_resource type="Texture2D" uid="uid://dp1s6l5t25up7" path="res://store/other_pic/lose.png" id="2_p73ww"]
+[ext_resource type="AudioStream" uid="uid://d28hiar1du6m4" path="res://original_sound/BGM/game_lose.wav" id="3_caxyl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kovt5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 40.0
+texture = ExtResource("2_p73ww")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_caxyl")
+autoplay = true
