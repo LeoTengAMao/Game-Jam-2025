@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu181xbfe7m38"]
+[gd_scene load_steps=3 format=3 uid="uid://cd1efy4old5lu"]
 
-[ext_resource type="Script" uid="uid://cb6277fhhoylu" path="res://scenes/RestArea/scripts/store1.gd" id="1_28t40"]
+[ext_resource type="Script" uid="uid://cb6277fhhoylu" path="res://scenes/RestArea1/scripts/store1.gd" id="1_28t40"]
 [ext_resource type="AudioStream" uid="uid://b3slju3157p44" path="res://original_sound/BGM/chill_loop.wav" id="2_1igdg"]
 
 [node name="Store" type="Control"]

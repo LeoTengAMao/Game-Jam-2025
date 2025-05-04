@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbw45sragwjg0"]
+[gd_scene load_steps=7 format=3 uid="uid://cjv1o3su1rs5s"]
 
-[ext_resource type="Script" uid="uid://bmhjw5kgr7qte" path="res://scenes/RestArea/scripts/shop1.gd" id="1_6h8k8"]
+[ext_resource type="Script" uid="uid://bmhjw5kgr7qte" path="res://scenes/RestArea1/scripts/shop1.gd" id="1_6h8k8"]
 [ext_resource type="Texture2D" uid="uid://b8m1pyvlt0gtq" path="res://asset/Crafting_Table_JE4_BE3.png" id="2_devtw"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_m56m7"]
 
