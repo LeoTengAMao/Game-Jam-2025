@@ -19,16 +19,16 @@ func _ready():
 	$Label.position = Vector2(10, 10)
 	$Label.add_theme_font_size_override("font_size", 36)
 
-	add_item($item01, "res://store/items/potion.png", "炸彈", [3, 3, 3], [170, 30])
+	add_item($item01, "res://store/other_pic/bomb.png", "炸彈", [3, 3, 3], [170, 30])
 	add_item($item02, "res://store/items/potion.png", "藥水", [2, 1, 1], [375, 30])
-	add_item($item03, "res://store/items/potion.png", "火棍", [1, 2, 0], [580, 30])
+	add_item($item03, "res://store/other_pic/fire_stick.png", "火棍", [1, 2, 0], [580, 30])
 	add_item($item04, "res://store/items/potion.png", "護身符", [0, 0, 1], [790, 30])
 	add_item($item05, "res://store/items/potion.png", "爆肝咖啡", [0, 1, 1], [100, 430])
 	add_item($item06, "res://store/items/potion.png", "煙霧彈", [0, 2, 2], [305, 430])
 	add_item($item07, "res://store/items/potion.png", "亂數產生器", [2, 1, 0], [510, 430])
 	add_item($item08, "res://store/items/potion.png", "收納技巧", [0, 1, 0], [715, 430])
 	
-	var exit_button = $exit  # 這是你在場景中創建的按鈕
+	var exit_button = $exit
 	exit_button.position = Vector2(830,340)
 	exit_button.custom_minimum_size = Vector2(128, 64)
 	exit_button.text = "EXIT"
@@ -38,10 +38,12 @@ func _ready():
 func add_item(item_node, texture_path, item_name, item_price, item_position):
 	item_node.position = Vector2(item_position[0], item_position[1])
 
-	var potion_image = TextureRect.new()
+	var potion_image = item_node.get_node("t")
 	potion_image.texture = load(texture_path)
-	potion_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	potion_image.custom_minimum_size = Vector2(180, 180)
+	potion_image.size = Vector2(180, 180)
+	potion_image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	
 	item_node.add_child(potion_image)
 
 	var buy_button = Button.new()
@@ -54,6 +56,8 @@ func add_item(item_node, texture_path, item_name, item_price, item_position):
 			_on_buy_pressed(item_name, texture_path, item_price[0], item_price[1], item_price[2])
 	)
 	item_node.add_child(buy_button)
+
+
 
 func update_currency_display():
 	$Label.text = "Point: %d\nLine: %d\nPlane: %d" % [player_point, player_line, player_plane]
