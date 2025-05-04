@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cg2upsgmwjxjh" path="res://scenes/RestArea/scenes/player.tscn" id="2_6y5kl"]
 [ext_resource type="Texture2D" uid="uid://dmorbuabypoyr" path="res://sprite/吉米花惹發/5.png" id="2_fyi4p"]
 [ext_resource type="PackedScene" uid="uid://cwt2p0miar0ed" path="res://scenes/RestArea/scenes/shop.tscn" id="4_ilovm"]
-[ext_resource type="PackedScene" path="res://scenes/RestArea/scenes/shop1.tscn" id="6_akc8a"]
+[ext_resource type="PackedScene" uid="uid://bbw45sragwjg0" path="res://scenes/RestArea/scenes/shop1.tscn" id="6_akc8a"]
 [ext_resource type="PackedScene" uid="uid://jrfeu3xt5ig" path="res://scenes/RestArea/scenes/Stair.tscn" id="6_nbrc2"]
 [ext_resource type="AudioStream" uid="uid://ctma0tc3fnjxb" path="res://original_sound/BGM/wizard_loop.wav" id="7_akc8a"]
 

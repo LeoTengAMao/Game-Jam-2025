@@ -59,8 +59,4 @@ _positions = [NodePath("../EnemyPosition/Enemy1")]
 [node name="Enemy1" type="Node2D" parent="EnemyPosition"]
 position = Vector2(217, 2)
 
-[node name="HealthBar2" parent="." instance=ExtResource("13_2rd6h")]
-offset_left = 1455.0
-offset_top = -384.0
-offset_right = 1455.0
-offset_bottom = -384.0
+[node name="Enemy_health" parent="." instance=ExtResource("13_2rd6h")]
