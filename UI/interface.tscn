@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chewljtsyxnd8" path="res://sprite/simpleUIpackToldi/button/button3.png" id="5_4h7e0"]
 [ext_resource type="Texture2D" uid="uid://bg4xdvvgnc4ds" path="res://sprite/simpleUIpackToldi/button/button1.png" id="6_jwg50"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su62x"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55o2c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su62x"]
 
@@ -114,7 +114,7 @@ offset_right = 4.8819
 offset_bottom = -4.7041
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_su62x")
+theme_override_styles/panel = SubResource("StyleBoxTexture_55o2c")
 
 [node name="SkillButtonPanel" type="Panel" parent="PanelContainer"]
 custom_minimum_size = Vector2(800, 200)

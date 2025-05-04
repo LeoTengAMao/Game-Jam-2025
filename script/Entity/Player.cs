@@ -17,12 +17,12 @@ public partial class Player: Entity
 	
 	private int _maxActionPoint;
 	private int _actionPoint;
-	private AbstractSkill _attackAbstractSkill;
-	public AbstractSkill[] Skills{ get; private set; } = new AbstractSkill[5];
+	private AbstractSkill _attackSkill;
+	public Skill[] Skills{ get; private set; } = new Skill[5];
 	
-	public void ReplaceSkill(AbstractSkill abstractSkill, int idx)
+	public void ReplaceSkill(Skill skill, int idx)
 	{
-		Skills[idx] = abstractSkill;
+		Skills[idx] = skill;
 	}
 
 	public override void TakeDamage(int damage)
@@ -35,7 +35,9 @@ public partial class Player: Entity
 	{
 		_maxActionPoint = _actionPoint;
 		_actionPoint = actionPoint;
-		_attackAbstractSkill = new BasicAttackSkill(0, this);
+		_attackSkill = new BasicAttackSkill(0, this.Atk);
+		Skills[0] = new Skill(999, 100000);
+		Skills[1] = new Skill(5, 1);
 		Skills = Skills;
 	}
 
@@ -55,11 +57,22 @@ public partial class Player: Entity
 	}
 	public void UseAttackSkill(Entity target)
 	{
-		_attackAbstractSkill.Execute(target);
+		_attackSkill.Execute(target);
 	}
 
 	public void UseSkill(int idx, Entity target)
 	{
 		Skills[idx].Execute(target);
+		_actionPoint -= Skills[idx].ActionPoint;
+		target.TakeDamage(Skills[idx].Atk);
+	}
+
+	public void AddSpd()
+	{
+		AccumulateSpd += CurrentSpd;
+	}
+	public bool IsSpdGreaterThanTarget(int target)
+	{
+		return AccumulateSpd >= target;
 	}
 }

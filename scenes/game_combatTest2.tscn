@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhpi6qa0bk82y"]
+[gd_scene load_steps=28 format=3 uid="uid://bhpi6qa0bk82y"]
 
-[ext_resource type="Script" path="res://script/game.gd" id="1_v1npp"]
+[ext_resource type="Script" uid="uid://csqk6a46awi62" path="res://script/game.gd" id="1_v1npp"]
 [ext_resource type="Resource" uid="uid://je6u1uxlm3p0" path="res://Inventory/Item/PlayerInv.tres" id="3_2bap4"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="3_dln84"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="4_pofri"]
@@ -10,6 +10,12 @@
 [ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="8_u045r"]
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="9_u045r"]
 [ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="10_u346w"]
+[ext_resource type="PackedScene" uid="uid://bg6g1judfxp5r" path="res://entity/Arhi.tscn" id="11_u346w"]
+[ext_resource type="PackedScene" uid="uid://k5k263gxyj7b" path="res://entity/Nar.tscn" id="12_c8tck"]
+[ext_resource type="PackedScene" uid="uid://cuy65yhpron2j" path="res://entity/Nar_angry.tscn" id="13_4tqn8"]
+[ext_resource type="PackedScene" uid="uid://bktgmltv4v0nu" path="res://entity/LeeSin.tscn" id="14_w3dgv"]
+[ext_resource type="PackedScene" uid="uid://bhloryvpkywwn" path="res://entity/Zed.tscn" id="15_mdvyj"]
+[ext_resource type="PackedScene" uid="uid://dvcu1cwg1bh76" path="res://entity/Summoner.tscn" id="16_7x27w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15ci4"]
 atlas = ExtResource("10_u346w")
@@ -140,5 +146,6 @@ position = Vector2(365, -95)
 
 [node name="EnemyGenerator" type="Node" parent="Enemy" node_paths=PackedStringArray("_positions")]
 script = ExtResource("5_pofri")
-_howlingCanyon = Array[PackedScene]([ExtResource("6_wdcr7"), ExtResource("7_dln84"), SubResource("PackedScene_h4wfq")])
+_howlingCanyon = Array[PackedScene]([ExtResource("6_wdcr7"), ExtResource("7_dln84"), SubResource("PackedScene_h4wfq"), ExtResource("11_u346w"), ExtResource("12_c8tck"), ExtResource("13_4tqn8"), ExtResource("14_w3dgv"), ExtResource("15_mdvyj"), ExtResource("16_7x27w"), null])
+_sharpGrassland = Array[PackedScene]([])
 _positions = [NodePath("../EnemyPositions/Enemy1")]

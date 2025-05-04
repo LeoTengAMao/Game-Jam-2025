@@ -12,6 +12,7 @@
 script = ExtResource("1_78awf")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_s0nni")]
+z_index = 1
 offset_left = -512.0
 offset_top = -389.0
 offset_right = -512.0
@@ -25,6 +26,7 @@ z_index = 2
 position = Vector2(-254, -5)
 
 [node name="Interface" parent="." instance=ExtResource("1_qbsmt")]
+z_index = 2
 custom_minimum_size = Vector2(1000, 768)
 offset_left = -509.0
 offset_top = -379.0

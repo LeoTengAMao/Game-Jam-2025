@@ -7,6 +7,8 @@ public abstract class Entity
 	protected int Atk { get; private set; }
 	protected int Def { get; private set; }
 	protected int Spd { get; private set; }
+	
+	protected int AccumulateSpd = 0;
 
 	protected Entity(int hp, int atk, int def, int spd)
 	{
@@ -27,5 +29,15 @@ public abstract class Entity
 	public bool IsDead()
 	{
 		return Hp <= 0;
+	}
+
+	public bool IsSpdGreaterThanTarget(int target)
+	{
+		return AccumulateSpd > target;
+	}
+
+	public int GetAccumulateSpd()
+	{
+		return AccumulateSpd;
 	}
 }

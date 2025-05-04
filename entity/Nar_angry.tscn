@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://cuy65yhpron2j"]
+
+[ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_sih1c"]
+[ext_resource type="Texture2D" uid="uid://bej4any3dkcd6" path="res://sprite/enemy_sprite/Angry nar.png" id="2_sih1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kltxj"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc51g"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybx0d"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb1sn"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nicir"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5njfk"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd32v"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl2pl"]
+atlas = ExtResource("2_sih1c")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il1ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kltxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc51g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybx0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb1sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nicir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5njfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd32v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl2pl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a23gj"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_sih1c")
+Hp = 6
+Atk = 8
+Def = 4
+Spd = 3
+Points = 3
+Lines = 4
+Planes = 2
+AppearChance = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.42424, 2.24242)
+sprite_frames = SubResource("SpriteFrames_il1ph")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.941289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a23gj")
