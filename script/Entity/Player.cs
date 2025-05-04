@@ -33,7 +33,7 @@ public partial class Player: Entity
 	
 	public Player(int hp, int atk, int def, int spd, int actionPoint) : base(hp, atk, def, spd)
 	{
-		_maxActionPoint = _actionPoint;
+		_maxActionPoint = actionPoint;
 		_actionPoint = actionPoint;
 		_attackSkill = new BasicAttackSkill(0, this.Atk);
 		Skills[0] = new Skill(999, 100000);
@@ -58,6 +58,7 @@ public partial class Player: Entity
 	public void UseAttackSkill(Entity target)
 	{
 		_attackSkill.Execute(target);
+		_actionPoint -= 1;
 	}
 
 	public void UseSkill(int idx, Entity target)

@@ -71,7 +71,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_8na1r")
-Hp = 5
+Hp = 10
 Atk = 5
 Def = 1
 Spd = 5

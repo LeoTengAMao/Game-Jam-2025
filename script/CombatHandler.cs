@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace 新遊戲專案.script;
@@ -38,6 +39,8 @@ public partial class CombatHandler : Node
 		if (state == GameState.PLAYERTURN)
 		{
 			EmitSignal(SignalName.PlayerTurnStart);
+			_player.Player.TurnStartInit();
+			GD.Print(_player.Player.CurrentActionPoint);
 		}
 		if (state == GameState.ENEMYTURN)
 		{
@@ -78,7 +81,9 @@ public partial class CombatHandler : Node
 		inter.Call("HealthBarUpdate", _player.Player.CurrentHp, _player.Player.CurrentMaxHp);
 		
 		await ToSignal(GetTree().CreateTimer(3.0f), SceneTreeTimer.SignalName.Timeout);
-
+		
+		GD.Print(_player.Player.CurrentHp);
+		
 		if (_player.Player.IsDead())
 		{
 			SwitchState(GameState.LOST);
@@ -124,6 +129,7 @@ public partial class CombatHandler : Node
 
 	private void FinishedPlayerOperate(int targetIdx)
 	{
+		GD.Print(_enemyGenerator.GetEnemyByIdx(targetIdx).CurrentHp);
 		if (targetIdx >= 0)
 		{
 			Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
@@ -133,12 +139,43 @@ public partial class CombatHandler : Node
 				return;
 			}
 		}
-		SwitchState(GameState.ENEMYTURN);
+
+		if (_player.Player.CurrentActionPoint <= 0)
+		{
+			SwitchState(GameState.ENEMYTURN);
+		}
 	}
 
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void SwitchNextTurn()
 	{
+		while (true)
+		{
+			Entity target = _enemyGenerator.GetEnemyByIdx(0);
+			if (_player.Player.IsSpdGreaterThanTarget(10) || target.IsSpdGreaterThanTarget(10))
+			{
+				if (_player.Player.GetAccumulateSpd() > target.GetAccumulateSpd())
+				{
+					SwitchState(GameState.PLAYERTURN);
+				}
+				if (_player.Player.GetAccumulateSpd() < target.GetAccumulateSpd())
+				{
+					SwitchState(GameState.ENEMYTURN);
+				}
+				if (_player.Player.GetAccumulateSpd() == target.GetAccumulateSpd())
+				{
+					var r = GD.Randi() % 2;
+					if (r == 0)
+					{
+							SwitchState(GameState.ENEMYTURN);
+					}
+					if (r == 1)
+					{
+						SwitchState(GameState.PLAYERTURN);
+					}
+				}
+			}
+				
+		}
 	}
 }
