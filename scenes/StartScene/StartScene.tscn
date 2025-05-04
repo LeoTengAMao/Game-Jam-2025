@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyppo2lb7oht2"]
+[gd_scene load_steps=6 format=3 uid="uid://dyppo2lb7oht2"]
 
 [ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://scenes/StartScene/Scripts/start_scene.gd" id="1_6kmw5"]
 [ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://scenes/StartScene/images/start_background.jpg" id="1_dh5a1"]
+[ext_resource type="Texture2D" uid="uid://bolwro46bu8y1" path="res://store/other_pic/enter_name.png" id="2_wdprl"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="3_mbrg8"]
 [ext_resource type="AudioStream" uid="uid://ci1eygqt5pvux" path="res://original_sound/BGM/credit_loop.wav" id="4_0gnf0"]
 
@@ -9,8 +10,17 @@
 script = ExtResource("1_6kmw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_dh5a1")
 metadata/_edit_lock_ = true
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -511.0
+offset_top = -381.0
+offset_right = 510.0
+offset_bottom = 386.0
+texture = ExtResource("2_wdprl")
+expand_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.15, 1.15)
