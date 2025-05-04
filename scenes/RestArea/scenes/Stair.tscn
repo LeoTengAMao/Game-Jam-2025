@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://jrfeu3xt5ig"]
 
-[ext_resource type="Script" uid="uid://ta6vywr8lch" path="res://scenes/RestArea/scripts/Stair.gd" id="1_q5c2a"]
+[ext_resource type="Script" path="res://scenes/RestArea/scripts/Stair.gd" id="1_q5c2a"]
 [ext_resource type="Texture2D" uid="uid://c2e7jln8yj4lo" path="res://sprite/dungeon_stairs.png" id="2_q5c2a"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="4_2crup"]
 
