@@ -1,12 +1,15 @@
-[gd_scene load_steps=33 format=3 uid="uid://rqorsd0vmmqn"]
+[gd_scene load_steps=36 format=3 uid="uid://rqorsd0vmmqn"]
 
 [ext_resource type="Script" uid="uid://dpkit03p1mlta" path="res://script/interface.gd" id="1_s3rii"]
 [ext_resource type="PackedScene" uid="uid://b72brxojn6dwo" path="res://UI/backpack.tscn" id="3_0bks8"]
+[ext_resource type="Texture2D" uid="uid://dqe15woy6utct" path="res://sprite/2_1.png" id="3_jwg50"]
+[ext_resource type="Texture2D" uid="uid://cqkpcy4utmx12" path="res://sprite/3_1.png" id="4_1w5oa"]
 [ext_resource type="Texture2D" uid="uid://cyndwadv6fyet" path="res://sprite/pixelCardAssest.png" id="4_4h7e0"]
-[ext_resource type="Texture2D" uid="uid://ceck1djtt6i7r" path="res://sprite/simpleUIpackToldi/button/button2.png" id="4_mbs16"]
 [ext_resource type="Script" uid="uid://c0e7sogstn21w" path="res://script/backpack.gd" id="4_u8s32"]
-[ext_resource type="Texture2D" uid="uid://chewljtsyxnd8" path="res://sprite/simpleUIpackToldi/button/button3.png" id="5_4h7e0"]
-[ext_resource type="Texture2D" uid="uid://bg4xdvvgnc4ds" path="res://sprite/simpleUIpackToldi/button/button1.png" id="6_jwg50"]
+[ext_resource type="Texture2D" uid="uid://c7j4i1oi6i852" path="res://sprite/1_1.png" id="5_jewjf"]
+[ext_resource type="Texture2D" uid="uid://bj86liwehbxol" path="res://sprite/16.png" id="6_jwg50"]
+[ext_resource type="Texture2D" uid="uid://bpxdfoqty634w" path="res://sprite/17.png" id="7_1w5oa"]
+[ext_resource type="Texture2D" uid="uid://djb8qsfaaxxfw" path="res://sprite/15.png" id="8_jewjf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55o2c"]
 
@@ -54,40 +57,52 @@ region_rect = Rect2(12.7274, 5.25745, 103.03, 128.485)
 bg_color = Color(0.746569, 0.55107, 0.437141, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2hxe"]
-texture = ExtResource("4_mbs16")
+texture = ExtResource("3_jwg50")
+region_rect = Rect2(168.644, 1285.2, 473.948, 485.737)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smsvh"]
-texture = ExtResource("5_4h7e0")
+texture = ExtResource("4_1w5oa")
+region_rect = Rect2(192.223, 1301.7, 440.936, 457.442)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nildt"]
-texture = ExtResource("6_jwg50")
+texture = ExtResource("5_jewjf")
+region_rect = Rect2(187.507, 1301.7, 433.862, 462.158)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1w5oa"]
-texture = ExtResource("4_mbs16")
+texture = ExtResource("3_jwg50")
+region_rect = Rect2(951.482, 367.956, 478.664, 495.169)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jewjf"]
-texture = ExtResource("5_4h7e0")
+texture = ExtResource("4_1w5oa")
+region_rect = Rect2(986.852, 398.61, 410.283, 426.789)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0a8t"]
-texture = ExtResource("6_jwg50")
+texture = ExtResource("5_jewjf")
+region_rect = Rect2(981.394, 391.017, 419.715, 452.726)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7j81n"]
-texture = ExtResource("4_mbs16")
+texture = ExtResource("3_jwg50")
+region_rect = Rect2(958.556, 1282.84, 478.663, 490.453)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn4k2"]
-texture = ExtResource("5_4h7e0")
+texture = ExtResource("4_1w5oa")
+region_rect = Rect2(986.852, 1315.85, 414.999, 443.294)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdril"]
-texture = ExtResource("6_jwg50")
+texture = ExtResource("5_jewjf")
+region_rect = Rect2(986.852, 1304.06, 414.999, 459.8)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7c8m8"]
-texture = ExtResource("4_mbs16")
+texture = ExtResource("6_jwg50")
+region_rect = Rect2(88.4734, 285.428, 627.214, 653.152)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lburn"]
-texture = ExtResource("5_4h7e0")
+texture = ExtResource("7_1w5oa")
+region_rect = Rect2(192.223, 398.61, 422.073, 440.936)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqerp"]
-texture = ExtResource("6_jwg50")
+texture = ExtResource("8_jewjf")
+region_rect = Rect2(192.223, 379.746, 433.863, 457.442)
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -209,48 +224,46 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_s3rii")
 
 [node name="BackPack" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 115.0
-offset_right = 330.0
-offset_bottom = 183.0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 280.0
+offset_bottom = 180.0
+rotation = 0.00542
 theme_override_styles/hover = SubResource("StyleBoxTexture_r2hxe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_smsvh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nildt")
-text = "Backpack
-"
 
 [node name="NormalAttack" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 25.0
-offset_right = 170.0
-offset_bottom = 93.0
+offset_left = 60.0
+offset_top = 15.0
+offset_right = 140.0
+offset_bottom = 95.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_1w5oa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jewjf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l0a8t")
-text = "Normal Attack"
 
 [node name="NormalDefend" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 115.0
-offset_right = 170.0
-offset_bottom = 183.0
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 140.0
+offset_bottom = 180.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_7j81n")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hn4k2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kdril")
-text = "Normal Defend"
 
 [node name="TakeBreak" type="Button" parent="PanelContainer/OtherButtonPanel"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 25.0
-offset_right = 330.0
-offset_bottom = 93.0
+offset_left = 200.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 90.0
+rotation = -0.00907522
 theme_override_styles/hover = SubResource("StyleBoxTexture_7c8m8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lburn")
 theme_override_styles/normal = SubResource("StyleBoxTexture_sqerp")
-text = "TakeBreak
+text = "
 "
 
 [node name="Backpack" parent="." instance=ExtResource("3_0bks8")]

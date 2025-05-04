@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjws71pcrqeuu"]
+[gd_scene load_steps=5 format=3 uid="uid://cjws71pcrqeuu"]
 
 [ext_resource type="Script" uid="uid://cv361qqgd473o" path="res://UI/health_bar.gd" id="1_0yf5l"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_tqipt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yf5l"]
+bg_color = Color(1, 0, 0.219608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqipt"]
+bg_color = Color(0.6, 1, 0.00392157, 1)
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3
@@ -30,4 +36,8 @@ theme_override_font_sizes/font_size = 35
 text = "Name"
 
 [node name="HealthBar" type="ProgressBar" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_0yf5l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tqipt")
+value = 100.0
