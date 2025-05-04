@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7sxpbsxpg62b"]
+
+[ext_resource type="Texture2D" uid="uid://bk4q0t7xrfvqt" path="res://sprite/Fantasy Wooden GUI/Fantasy Wooden GUI  Free/PNG/UI board Large  parchment.png" id="1_7q1b3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxe7y"]
+texture = ExtResource("1_7q1b3")
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pxe7y")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 77.0
+offset_right = 358.0
+offset_bottom = 204.0
+text = "創作者: 
+鄧均淮 (程式、美術、UI、遊戲發想)
+許育綸 (程式、遊戲發想)ex: coding MVP
+江春澤 (程式、音樂、遊戲發想)
+温博舟 (程式、遊戲發想)
+林宏睿 (美術、遊戲發想)
+"

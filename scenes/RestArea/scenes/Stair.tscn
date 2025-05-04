@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="4_2crup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m56m7"]
-size = Vector2(269, 190)
+size = Vector2(271, 198)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1aftu"]
 atlas = ExtResource("2_q5c2a")
@@ -23,14 +23,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33f4"]
-size = Vector2(350.872, 189.794)
+size = Vector2(175.676, 74.8663)
 
-[node name="shop" type="Area2D" node_paths=PackedStringArray("shop_intro")]
+[node name="Stair" type="Area2D" node_paths=PackedStringArray("shop_intro")]
 script = ExtResource("1_1aftu")
 shop_intro = NodePath("Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(148.5, 110)
+position = Vector2(144.5, 111)
 shape = SubResource("RectangleShape2D_m56m7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -39,20 +39,20 @@ sprite_frames = SubResource("SpriteFrames_s33f4")
 animation = &"new_animation"
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 148.0
-offset_top = 85.0
-offset_right = 330.0
-offset_bottom = 139.0
+offset_left = 194.0
+offset_top = -28.0
+offset_right = 392.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_2crup")
-theme_override_font_sizes/font_size = 60
-text = "按E進入藥水商店"
+theme_override_font_sizes/font_size = 30
+text = "按E進入下一關
+"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(144.822, 108.271)
+position = Vector2(145, 118)
 scale = Vector2(0.74, 0.935)
 shape = SubResource("RectangleShape2D_s33f4")
 

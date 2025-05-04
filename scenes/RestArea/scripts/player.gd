@@ -10,7 +10,8 @@ func _process(delta: float) -> void:
 		if GlobalRest.in_shop:
 			get_tree().change_scene_to_file("res://scenes/RestArea/scenes/store.tscn")
 		if GlobalRest.in_stair:
-			get_tree().change_scene_to_file("res://scenes/RestArea/scenes/game.tscn")
+			get_tree().change_scene_to_file("res://scenes/Game.tscn")
+			Global.Floor +=1
 		
 
 func _physics_process(delta: float) -> void:

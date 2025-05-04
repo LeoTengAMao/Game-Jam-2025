@@ -255,9 +255,9 @@ text = "TakeBreak
 
 [node name="Backpack" parent="." instance=ExtResource("3_0bks8")]
 layout_mode = 1
-anchor_left = -2.62436
-anchor_top = -1.9399
-anchor_right = 0.777608
+anchor_left = -2.60861
+anchor_top = -1.93339
+anchor_right = 0.785482
 anchor_bottom = 1.52661
 offset_left = 2649.35
 offset_top = 1484.84

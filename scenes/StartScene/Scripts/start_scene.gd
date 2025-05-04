@@ -6,4 +6,4 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		Global.player_name = new_text
 	else :
 		Global.player_name = "我是小懶豬，不想取名字"
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://scenes/RestArea/scenes/rest_area.tscn")
