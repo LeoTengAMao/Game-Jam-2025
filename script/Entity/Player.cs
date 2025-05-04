@@ -37,8 +37,11 @@ public partial class Player: Entity
 		_maxActionPoint = actionPoint;
 		_actionPoint = actionPoint;
 		_attackSkill = new BasicAttackSkill(0, this.Atk);
-		Skills[0] = new Skill(999, 100000);
-		Skills[1] = new Skill(5, 1);
+		Skills[0] = new Skill(2, 2);
+		Skills[1] = new Skill(3, 3);
+		Skills[2] = new Skill(4, 4);
+		Skills[3] = new Skill(3, 5);
+		Skills[4] = new Skill(2, 3);
 		Skills = Skills;
 	}
 
@@ -55,6 +58,7 @@ public partial class Player: Entity
 	public void UseDefenceSkill()
 	{
 		_effectDef += 3;
+		_actionPoint -= 999;
 	}
 	public void UseAttackSkill(Entity target)
 	{
@@ -66,7 +70,14 @@ public partial class Player: Entity
 	{
 		Skills[idx].Execute(target);
 		_actionPoint -= Skills[idx].ActionPoint;
-		target.TakeDamage(Skills[idx].Atk);
+		if (idx == 4)
+		{
+			Heal(Skills[idx].Atk);
+		}
+		else
+		{
+			target.TakeDamage(Skills[idx].Atk);
+		}
 	}
 
 	public void AddSpd()

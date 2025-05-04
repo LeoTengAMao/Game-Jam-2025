@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 namespace 新遊戲專案.script;
@@ -38,7 +37,6 @@ public partial class CombatHandler : Node
 	{
 		SwitchState(GameState.START);
 		Init();
-		BackpackGD = (GDScript)GD.Load("res://Inventory/Inventory.gd"); 
 	}
 
 	private void SwitchState(GameState state)
@@ -88,8 +86,8 @@ public partial class CombatHandler : Node
 		GD.Print(faceAmount);
 		
 		GetNode("/root/Global").Set("dot",dot + dotAmount);
-		GetNode("/root/Global").Set("dot",line + lineAmount);
-		GetNode("/root/Global").Set("dot",face + faceAmount);
+		GetNode("/root/Global").Set("line",line + lineAmount);
+		GetNode("/root/Global").Set("face",face + faceAmount);
 		
 		await ToSignal(GetTree().CreateTimer(3.0f), SceneTreeTimer.SignalName.Timeout);
 		/*TODO: change to WinScene*/
@@ -129,8 +127,13 @@ public partial class CombatHandler : Node
 	{
 		_enemyGenerator.Init();
 		_enemyGenerator.Generate((int)Area.HowlingCanyon);
-		Node inter = GetParent().GetNode("HealthBar"); 
-		inter.Call("HealthBarUpdate", _player.Player.CurrentHp, _player.Player.CurrentMaxHp);
+		using Node healthBar = GetParent().GetNode("HealthBar"); 
+		healthBar.Call("HealthBarUpdate", _player.Player.CurrentHp, _player.Player.CurrentMaxHp);
+		
+		Enemy enemy = _enemyGenerator.GetEnemyByIdx(0);
+		Node enemyHealth = GetParent().GetNode("Enemy_health"); 
+		enemyHealth.Call("HealthBarUpdate", enemy.CurrentHp, enemy.CurrentMaxHp);
+		enemyHealth.Call("EnemyTextUpdate", enemy.Name);
 		SwitchState(GameState.PLAYERTURN);
 	}
 
@@ -145,6 +148,11 @@ public partial class CombatHandler : Node
 		_player.UseDefenceSkill();
 		FinishedPlayerOperate(-1);
 	}
+	public void Click_Rest()
+	{
+		_player.UseDefenceSkill();
+		FinishedPlayerOperate(-1);
+	}
 	public void Click_Skill(int skillIdx, int targetIdx)
 	{
 		Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
@@ -155,6 +163,10 @@ public partial class CombatHandler : Node
 	private void FinishedPlayerOperate(int targetIdx)
 	{
 		GD.Print(_enemyGenerator.GetEnemyByIdx(targetIdx).CurrentHp);
+		Enemy _enemy = _enemyGenerator.GetEnemyByIdx(0);
+		Node enemyHealth = GetParent().GetNode("Enemy_health"); 
+		enemyHealth.Call("HealthBarUpdate", _enemy.CurrentHp, _enemy.CurrentMaxHp);
+		enemyHealth.Call("EnemyTextUpdate", _enemy.Name);
 		if (targetIdx >= 0)
 		{
 			Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
