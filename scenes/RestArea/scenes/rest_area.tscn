@@ -28,6 +28,7 @@ position = Vector2(-358.676, 126.849)
 
 [node name="shop" parent="." instance=ExtResource("4_ilovm")]
 position = Vector2(203.25, -7.10354)
+scale = Vector2(0.5, 0.5)
 
 [node name="shop2" parent="." instance=ExtResource("6_akc8a")]
 position = Vector2(-24.9081, -295.304)

@@ -52,7 +52,7 @@ position = Vector2(75, 148)
 scale = Vector2(0.365069, 0.452771)
 sprite_frames = SubResource("SpriteFrames_s33f4")
 autoplay = "default"
-frame_progress = 0.445859
+frame_progress = 0.0172916
 flip_h = true
 
 [node name="Label" type="Label" parent="."]
