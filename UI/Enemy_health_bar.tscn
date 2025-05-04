@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjws71pcrqeuu"]
+[gd_scene load_steps=5 format=3 uid="uid://c1fsven1joy1n"]
 
-[ext_resource type="Script" uid="uid://cv361qqgd473o" path="res://UI/health_bar.gd" id="1_0yf5l"]
-[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_tqipt"]
+[ext_resource type="Script" uid="uid://cv361qqgd473o" path="res://UI/health_bar.gd" id="1_kvr6u"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_al6s3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yf5l"]
 bg_color = Color(1, 0, 0.219608, 1)
@@ -16,22 +16,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0yf5l")
+script = ExtResource("1_kvr6u")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-offset_right = 1024.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1024.0
 offset_bottom = 768.0
+grow_horizontal = 0
+rotation = -0.0129613
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="PlayerName" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="EnemyName" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_tqipt")
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("2_al6s3")
 theme_override_font_sizes/font_size = 35
 text = "Name"
 
