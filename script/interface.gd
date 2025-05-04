@@ -41,31 +41,49 @@ func OpenButton() -> void:
 
 func _on_skill_1_pressed() -> void:
 	combatHanlder.Click_Skill(0, 0)
+	$FX.stream = load("res://asset/sound/剣で斬る1.mp3")
+	$FX.play()
 
 func _on_skill_2_pressed() -> void:
 	combatHanlder.Click_Skill(1, 0)
+	$FX.stream = load("res://asset/sound/剣で斬る2.mp3")
+	$FX.play()
 
 func _on_skill_3_pressed() -> void:
 	combatHanlder.Click_Skill(2, 0)
+	$FX.stream = load("res://asset/sound/大剣で斬る.mp3")
+	$FX.play()
 
 func _on_skill_4_pressed() -> void:
 	combatHanlder.Click_Skill(3, 0)
+	$FX.stream = load("res://asset/sound/剣で斬る4.mp3")
+	$FX.play()
 
 func _on_skill_5_pressed() -> void:
+	$FX.stream = load("res://asset/sound/heal_cut.mp3")
+	$FX.play()
 	combatHanlder.Click_Skill(4, 0)
 
 func _on_back_pack_pressed() -> void:
+	$FX.stream = load("res://asset/sound/backpackopen.mp3")
+	$FX.play()
 	print("Backpack")
 
 func _on_normal_attack_pressed() -> void:
+	$FX.stream = load("res://asset/sound/attack.mp3")
+	$FX.play()
 	if combatHanlder != null:
 		combatHanlder.Click_Attack(0)
 
 
 func _on_normal_defend_pressed() -> void:
+	$FX.stream = load("res://asset/sound/盾で防御.mp3")
+	$FX.play()
 	if combatHanlder != null:
 		combatHanlder.Click_Defense();
 
 
 func _on_take_break_pressed() -> void:
+	$FX.stream = load("res://asset/sound/take_a_breath.mp3")
+	$FX.play()
 	print("takebreak")

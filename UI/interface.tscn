@@ -148,7 +148,7 @@ anchor_bottom = 0.95
 offset_bottom = -100.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jwg50")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kj7xo")
-text = "skill1"
+text = "Sword"
 metadata/_edit_use_anchors_ = true
 
 [node name="Skill2" type="Button" parent="PanelContainer/SkillButtonPanel"]
@@ -163,7 +163,7 @@ offset_top = 100.0
 offset_right = -150.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4h7e0")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vfrx8")
-text = "skill2"
+text = "Another sword"
 metadata/_edit_use_anchors_ = true
 
 [node name="Skill3" type="Button" parent="PanelContainer/SkillButtonPanel"]
@@ -178,7 +178,7 @@ offset_right = -150.0
 offset_bottom = -100.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q8wvg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_sr5fs")
-text = "skill3
+text = "Big Sword
 "
 metadata/_edit_use_anchors_ = true
 
@@ -194,8 +194,7 @@ offset_top = 100.0
 offset_right = -300.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f171v")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fukly")
-text = "skill4
-"
+text = "Two-handed"
 metadata/_edit_use_anchors_ = true
 
 [node name="Skill5" type="Button" parent="PanelContainer/SkillButtonPanel"]
@@ -211,7 +210,7 @@ offset_right = -300.0
 offset_bottom = -60.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_x7iyv")
 theme_override_styles/normal = SubResource("StyleBoxTexture_u8glj")
-text = "skill5
+text = "Heal
 "
 metadata/_edit_use_anchors_ = true
 
@@ -278,6 +277,8 @@ offset_top = 1484.84
 offset_right = 274.95
 offset_bottom = -404.44
 script = ExtResource("4_u8s32")
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="PanelContainer/SkillButtonPanel/Skill1" to="." method="_on_skill_1_pressed"]
 [connection signal="button_down" from="PanelContainer/SkillButtonPanel/Skill2" to="PanelContainer/SkillButtonPanel/Skill2" method="_on_button_down"]
