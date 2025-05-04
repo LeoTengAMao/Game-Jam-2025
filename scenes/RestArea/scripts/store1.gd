@@ -1,12 +1,9 @@
 extends Control
 
-'''var player_point: int = Global.dot
+var player_point: int = Global.dot
 var player_line: int = Global.line
-var player_plane: int = Global.face'''
+var player_plane: int = Global.face
 
-var player_point: int = 10
-var player_line: int = 10
-var player_plane: int = 10
 
 func _ready():
 	var bg = $Background

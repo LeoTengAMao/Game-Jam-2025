@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dxcj6q23s6btj" path="res://scenes/RestArea/scripts/store.gd" id="1_i466x"]
 [ext_resource type="AudioStream" uid="uid://b3slju3157p44" path="res://original_sound/BGM/chill_loop.wav" id="2_1igdg"]
 
-[node name="Store" type="Control"]
+[node name="Store2" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_i466x")
