@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwt2p0miar0ed"]
+[gd_scene load_steps=10 format=3 uid="uid://wooujoyjh8g"]
 
-[ext_resource type="Script" uid="uid://cbyg1gs7lv43n" path="res://scenes/RestArea/scripts/shop.gd" id="1_s33f4"]
+[ext_resource type="Script" uid="uid://cbyg1gs7lv43n" path="res://scenes/RestArea1/scripts/shop.gd" id="1_s33f4"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_m56m7"]
 [ext_resource type="Texture2D" uid="uid://ca3bemyf7b734" path="res://asset/2_1.png" id="2_s33f4"]
 
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_m56m7")
 position = Vector2(75, 148)
 scale = Vector2(0.365069, 0.452771)
 sprite_frames = SubResource("SpriteFrames_s33f4")
-frame_progress = 0.436034
+frame_progress = 0.0533211
 flip_h = true
 
 [node name="Label" type="Label" parent="."]
