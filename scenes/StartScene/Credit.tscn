@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://hlypcpjipy70"]
+
+[ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://scenes/StartScene/Scripts/start_scene.gd" id="1_yx3nn"]
+[ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://scenes/StartScene/images/start_background.jpg" id="2_ko4tm"]
+[ext_resource type="PackedScene" uid="uid://c7sxpbsxpg62b" path="res://credit.tscn" id="3_yx3nn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yx3nn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ko4tm")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.15, 1.15)
+metadata/_edit_lock_ = true
+
+[node name="Credit" parent="." instance=ExtResource("3_yx3nn")]
+offset_left = -512.0
+offset_top = -379.0
+offset_right = -512.0
+offset_bottom = -379.0

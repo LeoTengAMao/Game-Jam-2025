@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7sxpbsxpg62b"]
+[gd_scene load_steps=10 format=3 uid="uid://c7sxpbsxpg62b"]
 
 [ext_resource type="Texture2D" uid="uid://bk4q0t7xrfvqt" path="res://sprite/Fantasy Wooden GUI/Fantasy Wooden GUI  Free/PNG/UI board Large  parchment.png" id="1_7q1b3"]
+[ext_resource type="Script" uid="uid://1rh7m88xr0mq" path="res://credit.gd" id="1_aokq2"]
+[ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_pxe7y"]
+[ext_resource type="Texture2D" uid="uid://bftduym2w2ktu" path="res://sprite/Fantasy Wooden GUI/Fantasy Wooden GUI  Free/PNG/TextBTN_Cancel.png" id="3_2l348"]
+[ext_resource type="Texture2D" uid="uid://dpapw164vo6r1" path="res://sprite/Fantasy Wooden GUI/Fantasy Wooden GUI  Free/PNG/TextBTN_Cancel_Pressed.png" id="4_aokq2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxe7y"]
 texture = ExtResource("1_7q1b3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83x8r"]
+texture = ExtResource("3_2l348")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsd54"]
+texture = ExtResource("4_aokq2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8uvic"]
+texture = ExtResource("3_2l348")
 
 [node name="Credit" type="Control"]
 layout_mode = 3
@@ -12,26 +25,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aokq2")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 768.0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 1013.0
+offset_bottom = 756.0
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pxe7y")
 
-[node name="Label" type="Label" parent="PanelContainer/Panel"]
+[node name="Credit_name" type="Label" parent="PanelContainer/Panel"]
 layout_mode = 0
 offset_left = 67.0
 offset_top = 77.0
-offset_right = 358.0
-offset_bottom = 204.0
+offset_right = 934.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxe7y")
+theme_override_font_sizes/font_size = 40
 text = "創作者: 
-鄧均淮 (程式、美術、UI、遊戲發想)
-許育綸 (程式、遊戲發想) coding MVP
-江春澤 (程式、音樂、遊戲發想)
-温博舟 (程式、遊戲發想)
-林宏睿 (美術、遊戲發想)
+鄧均淮 (程式、副美術(CG)、UI、遊戲發想)
+許育綸 (程式、遊戲發想) 
+江春澤 (程式、UI、主音樂、遊戲發想)
+温博舟 (程式、UI、遊戲發想)
+林紘睿 (主美術、UI、遊戲發想)
 "
+
+[node name="Credit_name2" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 420.0
+offset_right = 931.0
+offset_bottom = 858.0
+scale = Vector2(1.00109, 0.961306)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxe7y")
+theme_override_font_sizes/font_size = 40
+text = "使用的資源:
+Itch.io 免費素材 craftpixel.net 免費素材
+canva 免費素材 其餘部分都是自行製作
+opengameart免費素材"
+
+[node name="Button" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 598.0
+offset_right = 930.0
+offset_bottom = 688.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_83x8r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wsd54")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8uvic")
+
+[connection signal="pressed" from="PanelContainer/Panel/Button" to="." method="_on_button_pressed"]

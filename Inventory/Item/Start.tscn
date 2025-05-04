@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://wygw1iwcwcc3"]
+[gd_scene load_steps=21 format=3 uid="uid://wygw1iwcwcc3"]
 
 [ext_resource type="Script" uid="uid://chp54sf0lge6r" path="res://Inventory/Item/start.gd" id="1_c3uo2"]
 [ext_resource type="Texture2D" uid="uid://kfnwdd7bftsy" path="res://sprite/4.png" id="1_weqrf"]
 [ext_resource type="FontFile" uid="uid://j8h8a7rloy0b" path="res://asset/font/JasonHandwriting6.ttf" id="2_aljgq"]
 [ext_resource type="Texture2D" uid="uid://crsdy4cn0i520" path="res://sprite/PlayerSprite/Main_charater_IDLE.png" id="4_aljgq"]
+[ext_resource type="Texture2D" uid="uid://caxm31cldrtgf" path="res://sprite/arrow.png" id="5_c3uo2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aljgq"]
 
@@ -77,6 +78,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5qcb"]
+atlas = ExtResource("5_c3uo2")
+region = Rect2(0, 0, 388, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtjo4"]
+atlas = ExtResource("5_c3uo2")
+region = Rect2(406, 0, 388, 562)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aljgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5qcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtjo4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -97,6 +120,25 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_c3uo2")
 
+[node name="Button" type="Button" parent="PanelContainer/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 177.0
+offset_top = 146.0
+offset_right = 352.0
+offset_bottom = 267.0
+theme_override_fonts/font = ExtResource("2_aljgq")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxTexture_upo8e")
+
+[node name="Button2" type="Button" parent="PanelContainer/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 840.0
+offset_top = 373.0
+offset_right = 973.0
+offset_bottom = 680.0
+
 [node name="Label" type="Label" parent="PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = -1
@@ -114,17 +156,6 @@ text = "火柴人的進化之路
 (點擊山洞開始)
 "
 
-[node name="Button" type="Button" parent="PanelContainer/Panel"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 177.0
-offset_top = 146.0
-offset_right = 352.0
-offset_bottom = 267.0
-theme_override_fonts/font = ExtResource("2_aljgq")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxTexture_upo8e")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/Panel"]
 position = Vector2(376, 241)
 scale = Vector2(1.48242, 1.40039)
@@ -133,4 +164,21 @@ animation = &"new_animation"
 autoplay = "new_animation"
 speed_scale = 2.0
 
+[node name="point" type="AnimatedSprite2D" parent="PanelContainer/Panel"]
+position = Vector2(301, 112)
+rotation = 2.06889
+scale = Vector2(0.384578, 0.384578)
+sprite_frames = SubResource("SpriteFrames_aljgq")
+autoplay = "default"
+frame_progress = 0.775429
+
+[node name="point2" type="AnimatedSprite2D" parent="PanelContainer/Panel"]
+position = Vector2(842, 399)
+rotation = 0.742845
+scale = Vector2(0.384578, 0.384578)
+sprite_frames = SubResource("SpriteFrames_aljgq")
+autoplay = "default"
+frame_progress = 0.775429
+
 [connection signal="pressed" from="PanelContainer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/Button2" to="." method="_on_button_2_pressed"]

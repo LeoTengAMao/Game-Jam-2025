@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crxjvtpfwy8t2"]
+
+[ext_resource type="PackedScene" uid="uid://c7sxpbsxpg62b" path="res://credit.tscn" id="1_kmqx5"]
+
+[node name="Showcredit" type="Node2D"]
+
+[node name="Credit" parent="." instance=ExtResource("1_kmqx5")]

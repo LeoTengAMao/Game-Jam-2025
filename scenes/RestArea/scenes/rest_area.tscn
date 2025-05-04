@@ -10,6 +10,7 @@
 [node name="RestArea" type="Node2D"]
 scale = Vector2(1.00369, 0.985425)
 script = ExtResource("1_q2jxg")
+metadata/_edit_vertical_guides_ = [-1274.0]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("2_fyi4p")

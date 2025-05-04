@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d007kwo5t0osa"]
+[gd_scene load_steps=13 format=3 uid="uid://bwq4gxvyy8hvw"]
 
 [ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
 [ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="5_aug50"]
-[ext_resource type="PackedScene" path="res://UI/health_bar.tscn" id="5_s0nni"]
+[ext_resource type="PackedScene" uid="uid://cjws71pcrqeuu" path="res://UI/health_bar.tscn" id="5_s0nni"]
 [ext_resource type="Script" uid="uid://6ygrawtnlyht" path="res://script/EnemyGenerateHandler.cs" id="6_kiw3p"]
 [ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://entity/Howling/yasuo.tscn" id="7_400sg"]
 [ext_resource type="PackedScene" uid="uid://bg6g1judfxp5r" path="res://entity/Howling/Arhi.tscn" id="8_mcffj"]

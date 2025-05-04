@@ -254,6 +254,7 @@ text = "TakeBreak
 "
 
 [node name="Backpack" parent="." instance=ExtResource("3_0bks8")]
+visible = false
 layout_mode = 1
 anchor_left = -2.60861
 anchor_top = -1.93339
