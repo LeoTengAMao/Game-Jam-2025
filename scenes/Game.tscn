@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwq4gxvyy8hvw"]
+[gd_scene load_steps=14 format=3 uid="uid://bwq4gxvyy8hvw"]
 
 [ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://k5k263gxyj7b" path="res://entity/Howling/Nar.tscn" id="10_7ua8r"]
 [ext_resource type="PackedScene" uid="uid://dvcu1cwg1bh76" path="res://entity/Howling/Summoner.tscn" id="11_r7sob"]
 [ext_resource type="PackedScene" uid="uid://bhloryvpkywwn" path="res://entity/Howling/Zed.tscn" id="12_y5y3l"]
+[ext_resource type="PackedScene" uid="uid://c1fsven1joy1n" path="res://UI/Enemy_health_bar.tscn" id="13_2rd6h"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_78awf")
@@ -57,3 +58,9 @@ _positions = [NodePath("../EnemyPosition/Enemy1")]
 
 [node name="Enemy1" type="Node2D" parent="EnemyPosition"]
 position = Vector2(217, 2)
+
+[node name="HealthBar2" parent="." instance=ExtResource("13_2rd6h")]
+offset_left = 1455.0
+offset_top = -384.0
+offset_right = 1455.0
+offset_bottom = -384.0
