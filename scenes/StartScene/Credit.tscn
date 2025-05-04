@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbu4rxvgkkdw1"]
+[gd_scene load_steps=5 format=3 uid="uid://cv6djsbx3wiwj"]
 
 [ext_resource type="Script" uid="uid://defw41rfv4hq2" path="res://scenes/StartScene/Scripts/start_scene.gd" id="1_yx3nn"]
 [ext_resource type="Texture2D" uid="uid://u5kwti86xr87" path="res://scenes/StartScene/images/start_background.jpg" id="2_ko4tm"]
-[ext_resource type="PackedScene" path="res://credit.tscn" id="3_yx3nn"]
+[ext_resource type="PackedScene" uid="uid://c7sxpbsxpg62b" path="res://credit.tscn" id="3_yx3nn"]
 [ext_resource type="AudioStream" uid="uid://ci1eygqt5pvux" path="res://original_sound/BGM/credit_loop.wav" id="4_ko4tm"]
 
 [node name="Node2D" type="Node2D"]
