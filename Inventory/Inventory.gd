@@ -11,7 +11,7 @@ func AddItems(new_stack: InvItem) -> bool:
 	return false  # 沒空格
 	
 func AddEquiment(new_stack: InvItem) -> bool:
-	for i in range(23,items.size()):
+	for i in range(24,items.size()):
 		if items[i] == null:
 			items[i] = new_stack
 			return true
