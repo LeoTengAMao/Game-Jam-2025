@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bktgmltv4v0nu"]
+[gd_scene load_steps=11 format=3 uid="uid://bktgmltv4v0nu"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_4vti0"]
 [ext_resource type="Texture2D" uid="uid://cci477tfwyp0b" path="res://sprite/enemy_sprite/jia.png" id="2_4vti0"]
+[ext_resource type="AudioStream" uid="uid://c3tqojuusdkpb" path="res://original_sound/BGM/fight_loop05.wav" id="3_dknyj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cf0sy"]
 atlas = ExtResource("2_4vti0")
@@ -67,3 +68,7 @@ frame_progress = 0.154472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dknyj")
+autoplay = true

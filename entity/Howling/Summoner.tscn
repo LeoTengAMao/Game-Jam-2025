@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvcu1cwg1bh76"]
+[gd_scene load_steps=14 format=3 uid="uid://dvcu1cwg1bh76"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_3s7dg"]
 [ext_resource type="Texture2D" uid="uid://b23ehjupyjwa4" path="res://sprite/Wanderer Magican/Idle.png" id="2_3s7dg"]
+[ext_resource type="AudioStream" uid="uid://f3y5vvygilmi" path="res://original_sound/BGM/fight_loop02.wav" id="3_10psg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_og68x"]
 atlas = ExtResource("2_3s7dg")
@@ -90,3 +91,7 @@ frame_progress = 0.0139378
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_10psg")
+autoplay = true

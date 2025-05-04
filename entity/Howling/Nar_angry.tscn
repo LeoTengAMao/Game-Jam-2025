@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuy65yhpron2j"]
+[gd_scene load_steps=14 format=3 uid="uid://cuy65yhpron2j"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_sih1c"]
 [ext_resource type="Texture2D" uid="uid://bej4any3dkcd6" path="res://sprite/enemy_sprite/Angry nar.png" id="2_sih1c"]
+[ext_resource type="AudioStream" uid="uid://ruqiiwei4vqy" path="res://original_sound/BGM/fight_loop04.wav" id="3_4gqp3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kltxj"]
 atlas = ExtResource("2_sih1c")
@@ -89,3 +90,7 @@ frame_progress = 0.941289
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4gqp3")
+volume_db = 1.874

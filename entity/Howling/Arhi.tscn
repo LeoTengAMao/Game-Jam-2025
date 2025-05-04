@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bg6g1judfxp5r"]
+[gd_scene load_steps=28 format=3 uid="uid://bg6g1judfxp5r"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_gd2pk"]
 [ext_resource type="Texture2D" uid="uid://bd1thjwpcxjm0" path="res://sprite/Kitsune/Idle.png" id="2_jxkyy"]
 [ext_resource type="Texture2D" uid="uid://bpgdsqblgryg3" path="res://sprite/Kitsune/Idle_2.png" id="3_ef4ef"]
 [ext_resource type="Texture2D" uid="uid://cwn7n8a7qmcw3" path="res://sprite/Kitsune/Run.png" id="4_x2ocg"]
+[ext_resource type="AudioStream" uid="uid://d26t7wqwbl21q" path="res://original_sound/BGM/boss_loop.wav" id="5_vs8jg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhbb4"]
 atlas = ExtResource("2_jxkyy")
@@ -185,3 +186,8 @@ frame_progress = 0.523941
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vs8jg")
+volume_db = 5.622
+autoplay = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhloryvpkywwn"]
+[gd_scene load_steps=21 format=3 uid="uid://bhloryvpkywwn"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_i1fxt"]
 [ext_resource type="Texture2D" uid="uid://gat6644qy2uu" path="res://sprite/enemy_sprite/blindman.png" id="2_ilgxl"]
+[ext_resource type="AudioStream" uid="uid://c48fu2xy0xrsq" path="res://original_sound/BGM/fight_loop01.wav" id="3_boloi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmyd8"]
 atlas = ExtResource("2_ilgxl")
@@ -136,3 +137,7 @@ autoplay = "new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_boloi")
+autoplay = true
