@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dntm5nv8aubqy"]
+
+[ext_resource type="Script" uid="uid://c6xnbbh4x3lhf" path="res://script/Skill/BasicSkill.cs" id="1_n4s7r"]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_n4s7r")
+ActionPoint = 999
+Atk = 10000

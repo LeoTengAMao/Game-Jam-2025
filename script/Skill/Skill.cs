@@ -2,12 +2,14 @@ namespace 新遊戲專案.script;
 
 public class Skill : AbstractSkill
 {
-    public Skill(int actionPoint) : base(actionPoint)
-    {
-    }
+	public int ActionPoint => _actionPoint;
+	public int Atk => _atk;
+	public Skill(int actionPoint, int atk) : base(actionPoint, atk)
+	{
+	}
 
-    public override void Execute(Entity target)
-    {
-        throw new System.NotImplementedException();
-    }
+	public override void Execute(Entity target)
+	{
+		;
+	}
 }
