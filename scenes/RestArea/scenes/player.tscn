@@ -117,7 +117,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_msmfa"]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_s3tt8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
