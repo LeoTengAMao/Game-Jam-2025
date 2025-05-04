@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj5ilt1wvlojp"]
+[gd_scene load_steps=14 format=3 uid="uid://cj5ilt1wvlojp"]
 
 [ext_resource type="Script" uid="uid://1fb5ypd8vhje" path="res://script/BasicEnemy.cs" id="1_sjibh"]
 [ext_resource type="Texture2D" uid="uid://bnim6b2emq40r" path="res://sprite/enemy_sprite/yasuo.png" id="2_regsp"]
+[ext_resource type="AudioStream" uid="uid://dui5aflenapft" path="res://original_sound/BGM/fight_loop06.wav" id="3_regsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15ci4"]
 atlas = ExtResource("2_regsp")
@@ -89,3 +90,7 @@ frame_progress = 0.464089
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_regsp")
+autoplay = true
