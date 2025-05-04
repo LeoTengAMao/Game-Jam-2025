@@ -25,6 +25,14 @@ public abstract class Entity
 		if (loseHp < 1) loseHp = 1;
 		Hp -= loseHp;
 	}
+	public virtual void DirectDamage(int damage)
+	{
+		Hp -= damage;
+	}
+	public virtual void Heal(int value)
+	{
+		Hp += value;
+	}
 
 	public bool IsDead()
 	{

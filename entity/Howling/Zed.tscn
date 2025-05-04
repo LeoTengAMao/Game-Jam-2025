@@ -131,9 +131,8 @@ AppearChance = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.42424, 2.24242)
 sprite_frames = SubResource("SpriteFrames_il1ph")
-animation = &"new_animation"
+animation = &"idle"
 autoplay = "new_animation"
-frame_progress = 0.161888
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a23gj")

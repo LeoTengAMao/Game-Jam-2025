@@ -100,7 +100,7 @@ public partial class CombatHandler : Node
 		Enemy enemy = _enemyGenerator.GetEnemyByIdx(0);
 		enemy.DoAttack(_player.Player);
 		
-		Node inter = GetParent().GetNode("Interface"); 
+		Node inter = GetParent().GetNode("HealthBar"); 
 		inter.Call("HealthBarUpdate", _player.Player.CurrentHp, _player.Player.CurrentMaxHp);
 		
 		await ToSignal(GetTree().CreateTimer(3.0f), SceneTreeTimer.SignalName.Timeout);
@@ -129,6 +129,8 @@ public partial class CombatHandler : Node
 	{
 		_enemyGenerator.Init();
 		_enemyGenerator.Generate((int)Area.HowlingCanyon);
+		Node inter = GetParent().GetNode("HealthBar"); 
+		inter.Call("HealthBarUpdate", _player.Player.CurrentHp, _player.Player.CurrentMaxHp);
 		SwitchState(GameState.PLAYERTURN);
 	}
 
@@ -204,5 +206,19 @@ public partial class CombatHandler : Node
 			}
 				
 		}
+	}
+	
+	public void Click_Boom(int skillIdx, int targetIdx)
+	{
+		Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
+		target.DirectDamage(2);
+		_player.Player.UseActionPoint(1);
+		FinishedPlayerOperate(targetIdx);
+	}
+	public void Click_Hp_Potion(int targetIdx)
+	{
+		Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
+		_player.Player.Heal(2);
+		FinishedPlayerOperate(targetIdx);
 	}
 }

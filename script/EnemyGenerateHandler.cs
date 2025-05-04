@@ -23,6 +23,11 @@ public partial class EnemyGenerateHandler : Node
 		var currentAreaEnemies = _enemies[idx];
 		_enemyNumbers = _positions.Count;
 		var randomIndex = GD.Randi() % currentAreaEnemies.Count;
+		int floor = (int)GetNode("/root/Global").Get("Floor");
+		if (floor == 5)
+		{
+			randomIndex = currentAreaEnemies.Count - 1;
+		}
 		var enemyScene = currentAreaEnemies[(int)randomIndex];
 		var enemy = (BasicEnemy)enemyScene.Instantiate();
 		_targets[0] = enemy;

@@ -1,3 +1,4 @@
+using System;
 using 新遊戲專案.script;
 
 public partial class Player: Entity
@@ -75,5 +76,22 @@ public partial class Player: Entity
 	public bool IsSpdGreaterThanTarget(int target)
 	{
 		return AccumulateSpd >= target;
+	}
+	public void UseActionPoint(int value)
+	{
+		_actionPoint -= value;
+	}
+
+	public void AtkEffect(int value)
+	{
+		_effectAtk += value;
+	}
+	public void DefEffect(int value)
+	{
+		_effectDef += value;
+	}
+	public void SpdEffect(int value)
+	{
+		_effectSpd += value;
 	}
 }
