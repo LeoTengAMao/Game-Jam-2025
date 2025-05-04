@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwq4gxvyy8hvw"]
+[gd_scene load_steps=13 format=3 uid="uid://d007kwo5t0osa"]
 
 [ext_resource type="Script" uid="uid://dtofxqfl73pln" path="res://script/TurnManager.gd" id="1_78awf"]
 [ext_resource type="PackedScene" uid="uid://rqorsd0vmmqn" path="res://UI/interface.tscn" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://cc6m23rtumnqt" path="res://entity/player.tscn" id="2_cpr0p"]
 [ext_resource type="Script" uid="uid://dvb06wf1qr1hm" path="res://script/CombatHandler.cs" id="5_aug50"]
-[ext_resource type="PackedScene" uid="uid://cjws71pcrqeuu" path="res://UI/health_bar.tscn" id="5_s0nni"]
+[ext_resource type="PackedScene" path="res://UI/health_bar.tscn" id="5_s0nni"]
 [ext_resource type="Script" uid="uid://6ygrawtnlyht" path="res://script/EnemyGenerateHandler.cs" id="6_kiw3p"]
-[ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://entity/yasuo.tscn" id="7_400sg"]
+[ext_resource type="PackedScene" uid="uid://cj5ilt1wvlojp" path="res://entity/Howling/yasuo.tscn" id="7_400sg"]
+[ext_resource type="PackedScene" uid="uid://bg6g1judfxp5r" path="res://entity/Howling/Arhi.tscn" id="8_mcffj"]
+[ext_resource type="PackedScene" uid="uid://bktgmltv4v0nu" path="res://entity/Howling/LeeSin.tscn" id="9_2rd6h"]
+[ext_resource type="PackedScene" uid="uid://k5k263gxyj7b" path="res://entity/Howling/Nar.tscn" id="10_7ua8r"]
+[ext_resource type="PackedScene" uid="uid://dvcu1cwg1bh76" path="res://entity/Howling/Summoner.tscn" id="11_r7sob"]
+[ext_resource type="PackedScene" uid="uid://bhloryvpkywwn" path="res://entity/Howling/Zed.tscn" id="12_y5y3l"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_78awf")
@@ -45,7 +50,7 @@ _enemyGenerator = NodePath("../EnemyGenerator")
 
 [node name="EnemyGenerator" type="Node" parent="." node_paths=PackedStringArray("_positions")]
 script = ExtResource("6_kiw3p")
-_howlingCanyon = Array[PackedScene]([ExtResource("7_400sg")])
+_howlingCanyon = Array[PackedScene]([ExtResource("7_400sg"), ExtResource("8_mcffj"), ExtResource("9_2rd6h"), ExtResource("10_7ua8r"), ExtResource("11_r7sob"), ExtResource("12_y5y3l")])
 _positions = [NodePath("../EnemyPosition/Enemy1")]
 
 [node name="EnemyPosition" type="Node" parent="."]

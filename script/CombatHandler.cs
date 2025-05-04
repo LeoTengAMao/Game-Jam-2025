@@ -28,10 +28,17 @@ public partial class CombatHandler : Node
 	private GameState State;
 	[Export] private PlayerHandler _player;
 	[Export] private EnemyGenerateHandler _enemyGenerator;
+
+	private GDScript BackpackGD;
+
+	private int accumulateDot = 1;
+	private int accumulateLine = 1;
+	private int accumulateFace = 1;
 	public override void _Ready()
 	{
 		SwitchState(GameState.START);
 		Init();
+		BackpackGD = (GDScript)GD.Load("res://Inventory/Inventory.gd"); 
 	}
 
 	private void SwitchState(GameState state)
@@ -49,13 +56,13 @@ public partial class CombatHandler : Node
 		}
 		if (state == GameState.WON)
 		{
-			EmitSignal(SignalName.Won);
 			WinGame();
+			EmitSignal(SignalName.Won);
 		}
 		if (state == GameState.LOST)
 		{
-			EmitSignal(SignalName.Lost);
 			LoseGame();
+			EmitSignal(SignalName.Lost);
 		}
 		State = state;
 	}
@@ -68,6 +75,22 @@ public partial class CombatHandler : Node
 
 	private async void WinGame()
 	{
+		var dotAmount = GD.Randi() % accumulateDot;
+		var lineAmount = GD.Randi() % accumulateLine;
+		var faceAmount = GD.Randi() % accumulateFace;
+		int dot = (int)GetNode("/root/Global").Get("dot");
+		int line = (int)GetNode("/root/Global").Get("line");
+		int face = (int)GetNode("/root/Global").Get("face");
+		
+		GD.Print("dotAmount");
+		GD.Print(dotAmount);
+		GD.Print(lineAmount);
+		GD.Print(faceAmount);
+		
+		GetNode("/root/Global").Set("dot",dot + dotAmount);
+		GetNode("/root/Global").Set("dot",line + lineAmount);
+		GetNode("/root/Global").Set("dot",face + faceAmount);
+		
 		await ToSignal(GetTree().CreateTimer(3.0f), SceneTreeTimer.SignalName.Timeout);
 		/*TODO: change to WinScene*/
 	}
@@ -135,6 +158,10 @@ public partial class CombatHandler : Node
 			Entity target = _enemyGenerator.GetEnemyByIdx(targetIdx);
 			if (target.IsDead())
 			{
+				Enemy enemy = _enemyGenerator.GetEnemyByIdx(0);
+				accumulateDot += enemy.Points;
+				accumulateLine += enemy.Lines;
+				accumulateFace += enemy.Faces;
 				SwitchState(GameState.WON);
 				return;
 			}

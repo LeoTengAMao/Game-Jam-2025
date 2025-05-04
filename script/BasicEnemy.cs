@@ -21,7 +21,7 @@ public partial class BasicEnemy : Node
 
 	public override void _Ready()
 	{
-		Enemy = new Enemy(Hp, Atk, Def, Spd);
+		Enemy = new Enemy(Hp, Atk, Def, Spd, Points, Lines, Planes);
 	}
 
 	public override void _Process(double delta)

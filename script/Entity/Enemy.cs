@@ -7,9 +7,15 @@ public partial class Enemy : Entity
 	public int CurrentAtk => Atk ;
 	public int CurrentDef => Def ;
 	public int CurrentSpd => Spd ;
-	public Enemy(int hp, int atk, int def, int spd) : base(hp, atk, def, spd)
+	
+	public int Points;
+	public int Lines;
+	public int Faces;
+	public Enemy(int hp, int atk, int def, int spd, int dots, int lines, int faces) : base(hp, atk, def, spd)
 	{
-		
+		Points = dots;
+		Lines = lines;
+		Faces = faces;
 	}
 
 	public void DoAttack(Entity target)

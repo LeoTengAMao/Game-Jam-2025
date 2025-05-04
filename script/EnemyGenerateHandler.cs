@@ -7,9 +7,9 @@ namespace 新遊戲專案.script;
 public partial class EnemyGenerateHandler : Node
 {
 	private int _enemyNumbers;
-	[Export] private Godot.Collections.Array<PackedScene> _howlingCanyon;
-	[Export] private Godot.Collections.Array<PackedScene> _sharpGrassland;
-	[Export] private Godot.Collections.Array<Node2D> _positions;
+	[Export] private Godot.Collections.Array<PackedScene> _howlingCanyon = new();
+	[Export] private Godot.Collections.Array<PackedScene> _sharpGrassland= new();
+	[Export] private Godot.Collections.Array<Node2D> _positions= new();
 
 	private List<Godot.Collections.Array<PackedScene>> _enemies;
 	private BasicEnemy[] _targets = new BasicEnemy[1];
