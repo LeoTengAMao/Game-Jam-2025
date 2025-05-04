@@ -20,13 +20,13 @@ func _ready():
 	$Label.add_theme_font_size_override("font_size", 36)
 
 	add_item($item01, "res://store/other_pic/bomb.png", "炸彈", [3, 3, 3], [170, 30])
-	add_item($item02, "res://store/items/potion.png", "藥水", [2, 1, 1], [375, 30])
+	add_item($item02, "res://store/other_pic/potion.png", "藥水", [2, 1, 1], [375, 30])
 	add_item($item03, "res://store/other_pic/fire_stick.png", "火棍", [1, 2, 0], [580, 30])
-	add_item($item04, "res://store/items/potion.png", "護身符", [0, 0, 1], [790, 30])
-	add_item($item05, "res://store/items/potion.png", "爆肝咖啡", [0, 1, 1], [100, 430])
-	add_item($item06, "res://store/items/potion.png", "煙霧彈", [0, 2, 2], [305, 430])
-	add_item($item07, "res://store/items/potion.png", "亂數產生器", [2, 1, 0], [510, 430])
-	add_item($item08, "res://store/items/potion.png", "收納技巧", [0, 1, 0], [715, 430])
+	add_item($item04, "res://store/other_pic/charm.png", "護身符", [0, 0, 1], [790, 30])
+	add_item($item05, "res://store/other_pic/coffee.png", "爆肝咖啡", [0, 1, 1], [100, 430])
+	add_item($item06, "res://store/other_pic/smoke.png", "煙霧彈", [0, 2, 2], [305, 430])
+	add_item($item07, "res://store/other_pic/dice.png", "亂數產生器", [2, 1, 0], [510, 430])
+	add_item($item08, "res://store/other_pic/bpk.png", "收納技巧", [0, 1, 0], [715, 430])
 	
 	var exit_button = $exit
 	exit_button.position = Vector2(830,340)
